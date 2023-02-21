@@ -1,0 +1,55 @@
+@use '../../colors/colors' as *;
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+  & ul {
+    display: flex;
+    gap: 2rem;
+
+    & li {
+      list-style: none;
+      position: relative;
+
+      & a {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: $primary-light;
+
+        transition: all 0.5s ease-in-out;
+
+        &::before {
+          content: '';
+          width: 0;
+          height: 5px;
+
+          position: absolute;
+          left: 0;
+          bottom: -6px;
+
+          transition: all 0.5s;
+
+          background-color: $primary-light-accent;
+        }
+
+        &:hover::before {
+          width: 100%;
+        }
+
+        &:hover {
+          color: $primary-light-accent;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    display: none;
+  }
+}

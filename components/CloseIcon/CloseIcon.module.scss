@@ -1,0 +1,54 @@
+@use '../../colors/colors' as *;
+
+.container {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  & span {
+    width: 30px;
+    height: 5px;
+
+    position: absolute;
+
+    transition: all 0.3s ease-in-out;
+
+    border-radius: 3px;
+    background-color: $primary-light;
+  }
+
+  & span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  & span:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    gap: 5px;
+
+    & span {
+      background-color: $primary-light-accent;
+
+      &:nth-child(1) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: none;
+  }
+}

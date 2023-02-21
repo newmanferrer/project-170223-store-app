@@ -1,0 +1,43 @@
+@use '../../colors/colors' as *;
+
+.container {
+  padding: 0.4rem 0.8rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: all 0.4s ease-in-out;
+
+  // border-radius: 5px;
+  // border: 1px solid $primary-light;
+  background-color: $primary;
+
+  & img {
+    transition: all 0.4s ease-in-out;
+  }
+
+  & span {
+    margin-top: 4px;
+    font-size: 1rem;
+    color: $primary-light;
+
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-color: $primary-light-accent;
+
+    & img {
+      filter: brightness(0) saturate(100%) invert(90%) sepia(9%) saturate(6640%) hue-rotate(166deg)
+        brightness(79%) contrast(88%);
+    }
+
+    & span {
+      color: $primary-light-accent;
+    }
+  }
+}

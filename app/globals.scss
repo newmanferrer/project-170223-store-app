@@ -1,0 +1,33 @@
+@use '../colors/colors' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: $primary-light;
+}
+
+main {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: 5rem;
+  left: 0;
+}
