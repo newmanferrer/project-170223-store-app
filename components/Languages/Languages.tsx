@@ -8,12 +8,12 @@ export const Languages = () => {
       <ul className={styles.ul}>
         <li>
           <Link href='#' className={styles.english}>
-            English
+            En
           </Link>
         </li>
         <li>
           <Link href='#' className={styles.spanish}>
-            Spanish
+            Sp
           </Link>
         </li>
       </ul>
