@@ -10,7 +10,7 @@ export default function RootLayout({ children }: IProps) {
   return (
     <html
       lang='en'
-      className={`${font_montserrat.variable} ${font_dancing_script} ${font_jetBrainsMono}`}
+      className={`${font_montserrat.variable} ${font_dancing_script.variable} ${font_jetBrainsMono.variable}`}
     >
       <head />
       <body>
