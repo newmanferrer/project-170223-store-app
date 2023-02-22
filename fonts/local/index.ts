@@ -1,7 +1,7 @@
 import localFont from '@next/font/local'
 
 //* -----------------------------------------------------------------
-//* 1.- Fira Code
+//* 1.- Jet Brains Mono
 //* -----------------------------------------------------------------
 export const font_jetBrainsMono = localFont({
   src: [
