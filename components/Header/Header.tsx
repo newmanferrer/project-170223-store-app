@@ -1,4 +1,4 @@
-import { Logo, Navigation, HamburgerIcon, CloseIcon, CartButton } from '../'
+import { Logo, Navigation, HamburgerIcon, CartButton, Languages, LightDarkButton } from '../'
 import { font_dancing_script } from '../../fonts'
 import styles from './Header.module.scss'
 
@@ -7,9 +7,10 @@ export const Header = () => {
     <header className={`${styles.container} ${font_dancing_script.variable}`}>
       <Logo href='/' label='BestStore' />
       <Navigation />
-      {/* <CartButton /> */}
+      <CartButton />
+      <Languages />
+      <LightDarkButton id='dark-mode' />
       <HamburgerIcon />
-      {/* <CloseIcon /> */}
     </header>
   )
 }
