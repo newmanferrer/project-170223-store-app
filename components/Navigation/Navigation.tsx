@@ -22,6 +22,11 @@ const links: ILink[] = [
     id: 3,
     label: 'FAQ',
     route: '/faq'
+  },
+  {
+    id: 4,
+    label: 'Sign in',
+    route: '/signin'
   }
 ]
 
