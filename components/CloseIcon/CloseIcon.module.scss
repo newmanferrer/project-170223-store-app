@@ -9,13 +9,15 @@
   justify-content: center;
   align-items: center;
 
+  z-index: 30;
+
   & span {
     width: 30px;
     height: 5px;
 
     position: absolute;
 
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
     border-radius: 3px;
     background-color: $primary-light;
@@ -44,5 +46,11 @@
         transform: rotate(45deg);
       }
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: none;
   }
 }

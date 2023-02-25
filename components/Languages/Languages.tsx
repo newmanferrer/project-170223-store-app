@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './Languages.module.scss'
 
-export const Languages = () => {
+export function Languages() {
   return (
     <div className={styles.container}>
       <div className={styles.selected}></div>

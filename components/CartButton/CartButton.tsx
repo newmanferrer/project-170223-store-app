@@ -6,7 +6,7 @@ interface IProps {
   quantity?: number
 }
 
-export const CartButton = ({ quantity = 23 }: IProps) => {
+export function CartButton({ quantity = 73 }: IProps) {
   return (
     <div className={styles.container}>
       <Image src={ShoppingCartIcon} alt='shopping cart icon' width={25} height={25} />

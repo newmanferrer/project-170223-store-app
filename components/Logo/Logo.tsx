@@ -6,7 +6,7 @@ interface Props {
   label: string
 }
 
-export const Logo = ({ href = '/', label }: Props) => {
+export function Logo({ href = '/', label }: Props) {
   return (
     <Link href={href} className={styles.container}>
       {label}

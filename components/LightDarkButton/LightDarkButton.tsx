@@ -7,7 +7,7 @@ interface IProps {
   id: string
 }
 
-export const LightDarkButton = ({ id }: IProps) => {
+export function LightDarkButton({ id }: IProps) {
   return (
     <>
       <input type='checkbox' id={id} className={styles.input} />

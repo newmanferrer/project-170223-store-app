@@ -11,7 +11,9 @@
     width: 40px;
     height: 5px;
 
-    transition: all 0.3s ease-in-out;
+    z-index: 30;
+
+    transition: gap 0.3s ease-in-out;
 
     border-radius: 3px;
     background-color: $primary-light;
