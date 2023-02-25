@@ -1,5 +1,18 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["montserrat", "octo", "octocat", "invertocat", "pssst", "nextjs", "signin"]
+  "words": [
+    "montserrat",
+    "octo",
+    "octocat",
+    "invertocat",
+    "pssst",
+    "nextjs",
+    "signin",
+    "mobilenavbar",
+    "fullnavbar",
+    "iconcontainer",
+    "mobilenavbaropen",
+    "HambAndCloseIcon"
+  ]
 }
