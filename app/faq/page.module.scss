@@ -2,7 +2,7 @@
 
 .container {
   width: 100vw;
-  padding: 1rem;
+  padding: 1rem clamp(1rem, 5vw + 1rem, 5rem) 1rem;
 
   display: flex;
   flex-flow: column nowrap;
@@ -23,7 +23,7 @@
   }
 
   & .questionsContainer {
-    width: 80%;
+    width: 100%;
 
     display: flex;
     flex-flow: column nowrap;
