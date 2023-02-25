@@ -3,13 +3,14 @@
 .container {
   display: flex;
   flex-flow: row nowrap;
+  gap: 1rem;
   justify-content: space-around;
   align-items: center;
 
-  & ul {
+  & .ul {
     display: flex;
     flex-flow: row nowrap;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-around;
     align-items: center;
 
@@ -48,5 +49,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    display: none;
   }
 }

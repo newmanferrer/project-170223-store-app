@@ -1,0 +1,58 @@
+@use '../../colors/colors' as *;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 7rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+
+  background-color: $primary-dark;
+
+  & .ul {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    & li {
+      list-style: none;
+
+      & a {
+        text-decoration: none;
+        color: $primary-light;
+        font-size: 1.3rem;
+        font-weight: bold;
+
+        transition: color 0.5s ease-in-out;
+
+        &:hover {
+          color: $primary-light-accent;
+        }
+      }
+    }
+  }
+}
+
+.isOpen {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: none;
+  }
+}
