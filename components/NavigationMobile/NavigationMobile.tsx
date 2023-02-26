@@ -1,20 +1,18 @@
 import Link from 'next/link'
+import { useNavigationMobileContext } from '../../contexts'
 import { CartButton, Languages, LightDarkButton } from '..'
 import { links } from './links'
 import styles from './NavigationMobile.module.scss'
 
-interface IProps {
-  mobileNavIsOpen: boolean
-  setMobileNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
+export function NavigationMobile() {
+  const { navigationMobileIsOpen, closeNavigationMobile } = useNavigationMobileContext()
 
-export function NavigationMobile({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
   return (
-    <nav className={`${styles.container} ${mobileNavIsOpen ? styles.isOpen : ''}`}>
+    <nav className={`${styles.container} ${navigationMobileIsOpen ? styles.isOpen : ''}`}>
       <ul className={styles.ul}>
         {links.map(({ id, label, route }) => (
           <li key={id}>
-            <Link href={route} onClick={() => setMobileNavIsOpen(false)}>
+            <Link href={route} onClick={closeNavigationMobile}>
               {label}
             </Link>
           </li>

@@ -1,15 +1,11 @@
-'use client'
-
+import { useNavigationMobileContext } from '../../contexts'
 import styles from './HamburgerIcon.module.scss'
 
-interface IProps {
-  mobileNavIsOpen: boolean
-  setMobileNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
+export function HamburgerIcon() {
+  const { openNavigationMobile } = useNavigationMobileContext()
 
-export function HamburgerIcon({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
   return (
-    <div className={styles.container} onClick={() => setMobileNavIsOpen(true)}>
+    <div className={styles.container} onClick={openNavigationMobile}>
       <span></span>
       <span></span>
       <span></span>

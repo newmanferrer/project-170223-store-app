@@ -1,15 +1,11 @@
-'use client'
-
+import { useNavigationMobileContext } from '../../contexts'
 import styles from './CloseIcon.module.scss'
 
-interface IProps {
-  mobileNavIsOpen: boolean
-  setMobileNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
+export function CloseIcon() {
+  const { closeNavigationMobile } = useNavigationMobileContext()
 
-export function CloseIcon({ mobileNavIsOpen, setMobileNavIsOpen }: IProps) {
   return (
-    <div className={styles.container} onClick={() => setMobileNavIsOpen(false)}>
+    <div className={styles.container} onClick={closeNavigationMobile}>
       <span></span>
       <span></span>
     </div>
