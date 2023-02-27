@@ -1,3 +1,9 @@
+import { SectionBanner } from '../components'
+
 export default async function HomePage() {
-  return <h1>Home Page</h1>
+  return (
+    <>
+      <SectionBanner />
+    </>
+  )
 }

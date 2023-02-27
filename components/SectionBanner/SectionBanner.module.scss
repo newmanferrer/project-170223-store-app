@@ -1,0 +1,60 @@
+@use '../../colors/colors' as *;
+
+.container {
+  width: 100%;
+  height: 30rem;
+
+  background-color: $primary-dark;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+
+  & .container__banner {
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(
+        180deg,
+        rgba($color: $primary-dark, $alpha: 0.4),
+        rgba($color: $primary-dark, $alpha: 0.6),
+        rgba($color: $primary-dark, $alpha: 0.8)
+      ),
+      url(../../public/images/banners/banner-02.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $primary-dark;
+
+    & .banner__info {
+      width: 100%;
+      height: 100%;
+      padding: 0 1rem;
+
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
+      & .info__title {
+        text-align: center;
+
+        color: $primary-light-accent;
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: 0.25rem;
+      }
+
+      & .info__paragraph {
+        margin-top: 1.5rem;
+        text-align: center;
+
+        color: $primary-light-accent;
+        font-family: var(--font-dancing-script);
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
