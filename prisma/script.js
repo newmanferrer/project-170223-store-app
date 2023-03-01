@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client')
 
 const prisma = new PrismaClient()
 
-async function seed() {
+async function main() {
   await prisma.product.deleteMany()
 
   await prisma.product.create({
@@ -71,7 +71,7 @@ async function seed() {
   })
 }
 
-seed()
+main()
   .then(async () => {
     await prisma.$disconnect()
   })
