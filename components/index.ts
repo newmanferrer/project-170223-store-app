@@ -13,3 +13,6 @@ export { Languages } from './Languages/Languages'
 export { LightDarkButton } from './LightDarkButton/LightDarkButton'
 
 export { SectionBanner } from './SectionBanner/SectionBanner'
+export { SectionLatestProducts } from './SectionLatestProducts/SectionLatestProducts'
+
+export { ProductCard } from './ProductCard/ProductCard'
