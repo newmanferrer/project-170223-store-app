@@ -1,5 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+//* This is your Prisma schema file,
+//* learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -11,12 +11,31 @@ datasource db {
 }
 
 model Product {
-  productID   String  @id @default(uuid())
-  name        String
+  id                String            @id @default(uuid())
+  name              String
+  price             Float
+  stock             Int
+  short_description String
+  long_description  String
+  brand_name        String?
+  brand_logo        String?
+  image             String
+  categories        ProductCategory[]
+  tags              ProductTag[]
+}
+
+model ProductCategory {
+  id          String    @id @default(uuid())
+  name        String    @unique
   description String
-  price       Float
-  stock       Int
-  brand_name  String?
-  brand_logo  String?
-  image       String
+  image       String?
+  products    Product[]
+}
+
+model ProductTag {
+  id          String    @id @default(uuid())
+  name        String    @unique
+  description String
+  image       String?
+  products    Product[]
 }
