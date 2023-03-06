@@ -6,7 +6,7 @@ import styles from './Navigation.module.scss'
 export function Navigation() {
   return (
     <nav className={styles.container}>
-      <ul className={styles.ul}>
+      <ul className={styles.container__ul}>
         {links.map(({ id, label, route }) => (
           <li key={id}>
             <Link href={route}>{label}</Link>
@@ -14,9 +14,11 @@ export function Navigation() {
         ))}
       </ul>
 
-      <CartButton />
-      <Languages />
-      <LightDarkButton id='header' />
+      <section className={styles.container__section}>
+        <CartButton />
+        <Languages />
+        <LightDarkButton id='header' />
+      </section>
     </nav>
   )
 }

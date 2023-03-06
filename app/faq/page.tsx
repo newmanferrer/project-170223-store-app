@@ -1,8 +1,10 @@
+import { Header } from '@/components'
 import styles from './page.module.scss'
 
 export default function FAQPage() {
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
+      <Header />
       <h1>FAQ</h1>
 
       <div className={styles.questionsContainer}>
@@ -47,6 +49,6 @@ export default function FAQPage() {
           </p>
         </details>
       </div>
-    </div>
+    </main>
   )
 }

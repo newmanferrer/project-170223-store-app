@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  height: 30rem;
+  height: 40rem;
 
   background-color: $primary-dark;
 
@@ -21,7 +21,7 @@
         rgba($color: $primary-dark, $alpha: 0.6),
         rgba($color: $primary-dark, $alpha: 0.8)
       ),
-      url(../../public/images/banners/banner-02.jpg);
+      url(../../public/images/banners/banner-01.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

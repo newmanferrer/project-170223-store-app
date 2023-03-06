@@ -3,11 +3,11 @@
 .container {
   display: flex;
   flex-flow: row nowrap;
-  gap: 1rem;
-  justify-content: space-around;
+  gap: 3rem;
+  justify-content: space-between;
   align-items: center;
 
-  & .ul {
+  &__ul {
     display: flex;
     flex-flow: row nowrap;
     gap: 1rem;
@@ -49,6 +49,14 @@
         }
       }
     }
+  }
+
+  &__section {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 

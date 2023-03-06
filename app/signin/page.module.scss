@@ -1,0 +1,13 @@
+@use '../../colors/colors' as *;
+
+.container {
+  width: 100vw;
+  margin-top: 7rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $primary-light;
+}

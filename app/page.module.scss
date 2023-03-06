@@ -1,0 +1,14 @@
+@use '../colors/colors' as *;
+
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: 0rem;
+  left: 0;
+}

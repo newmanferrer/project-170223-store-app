@@ -1,5 +1,4 @@
 import { NavigationMobileProvider } from '../contexts'
-import { Header } from '../components'
 import { font_montserrat, font_dancing_script, font_jetBrainsMono } from '../fonts'
 import './globals.scss'
 
@@ -16,7 +15,6 @@ export default function RootLayout({ children }: IProps) {
       >
         <head />
         <body>
-          <Header />
           <main>{children}</main>
         </body>
       </html>

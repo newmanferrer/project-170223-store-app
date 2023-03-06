@@ -18,16 +18,3 @@ body {
   overflow-x: hidden;
   background-color: $primary-light;
 }
-
-main {
-  width: 100%;
-
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-  top: 7rem;
-  left: 0;
-}

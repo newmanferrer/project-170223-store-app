@@ -5,11 +5,19 @@ import { Logo, Navigation, NavigationMobile, HamburgerIcon, CloseIcon } from '..
 import { font_dancing_script } from '../../fonts'
 import styles from './Header.module.scss'
 
-export function Header() {
+interface IHeaderProps {
+  bgTransparent?: boolean
+}
+
+export function Header({ bgTransparent = false }: IHeaderProps) {
   const { navigationMobileIsOpen } = useNavigationMobileContext()
 
   return (
-    <header className={`${styles.container} ${font_dancing_script.variable}`}>
+    <header
+      className={`${styles.container} ${font_dancing_script.variable} ${
+        bgTransparent ? styles.bgTransparent : ''
+      }`}
+    >
       <Logo href='/' label='BestStore' />
 
       <Navigation />
