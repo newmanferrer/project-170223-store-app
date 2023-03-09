@@ -6,7 +6,7 @@ export default async function HomePage() {
     <main className={styles.container}>
       <Header bgTransparent />
       <SectionBanner />
-      <SectionLatestProducts />
+      <SectionLatestProducts title='Latest Products' />
     </main>
   )
 }

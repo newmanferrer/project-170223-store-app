@@ -2,7 +2,6 @@
 
 .container {
   width: 100%;
-  height: 30rem;
   padding: 1rem 0.5rem;
 
   display: flex;
@@ -23,13 +22,18 @@
 
   & .container__products_container {
     width: 100%;
+    padding: 1rem;
 
     display: flex;
     flex-flow: column nowrap;
     gap: 2rem;
     justify-content: center;
     align-items: center;
+  }
 
-    background-color: lightblue;
+  @media screen and (min-width: 768px) {
+    .container__products_container {
+      flex-flow: row nowrap;
+    }
   }
 }
