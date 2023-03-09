@@ -1,4 +1,7 @@
+import { IProductCategory, IProductTag } from '../'
+
 export interface IProduct {
+  id: string
   name: string
   price: number
   stock: number
@@ -7,16 +10,6 @@ export interface IProduct {
   brand_name: string
   brand_logo: string
   image: string
-}
-
-export interface IProductCategory {
-  name: String
-  description: String
-  image?: String
-}
-
-export interface IProductTag {
-  name: String
-  description: String
-  image?: String
+  categories?: IProductCategory[] | []
+  tags?: IProductTag[] | []
 }

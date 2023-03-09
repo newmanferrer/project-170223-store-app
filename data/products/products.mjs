@@ -1,8 +1,6 @@
-import { IProduct } from './model/product'
-
-export const products: IProduct[] = [
+export const products = [
   {
-    name: 'GitHub Octocat Figurine',
+    name: 'Octocat Figurine',
     price: 29.99,
     stock: 73,
     short_description:
@@ -14,7 +12,7 @@ export const products: IProduct[] = [
     image: '/images/products/github/small-octocat-882x882.webp'
   },
   {
-    name: 'GitHub Invertocat Hoodie',
+    name: 'Invertocat Hoodie',
     price: 59.99,
     stock: 73,
     short_description:
@@ -26,7 +24,7 @@ export const products: IProduct[] = [
     image: '/images/products/github/invertocat-hoodie-882x882.webp'
   },
   {
-    name: 'GitHub Gold Cap - Limited Edition',
+    name: 'Gold Cap',
     price: 29.99,
     stock: 73,
     short_description:
@@ -38,7 +36,7 @@ export const products: IProduct[] = [
     image: '/images/products/github/octo-cap-gold-882x882.webp'
   },
   {
-    name: 'GitHub Black Cap - Limited Edition',
+    name: 'Black Cap',
     price: 39.99,
     stock: 73,
     short_description:
@@ -50,7 +48,7 @@ export const products: IProduct[] = [
     image: '/images/products/github/octo-cap-black-882x882.webp'
   },
   {
-    name: 'GitHub Sticker Packs',
+    name: 'Sticker Packs',
     price: 5.99,
     stock: 73,
     short_description:
@@ -62,7 +60,7 @@ export const products: IProduct[] = [
     image: '/images/products/github/stickers-packs-sampler-882x882.webp'
   },
   {
-    name: 'GitHub Fitted Boxercraft Quilted Pullover',
+    name: 'Fitted Quilted Pullover',
     price: 36.99,
     stock: 73,
     short_description:
@@ -74,7 +72,7 @@ export const products: IProduct[] = [
     image: '/images/products/github/github-fitted-boxercraft-quilted-pullover-882x882.webp'
   },
   {
-    name: 'Adidas Ultraboost Light Shoes - Black',
+    name: 'Ultraboost Light Black',
     price: 190.99,
     stock: 73,
     short_description:
@@ -86,7 +84,7 @@ export const products: IProduct[] = [
     image: '/images/products/adidas/adidas-ultraboost-light-shoes-black.webp'
   },
   {
-    name: 'Adidas Ultraboost Light Shoes - Red',
+    name: 'Ultraboost Light Red',
     price: 190.99,
     stock: 73,
     short_description:
@@ -98,7 +96,7 @@ export const products: IProduct[] = [
     image: '/images/products/adidas/adidas-ultraboost-light-shoes-red.webp'
   },
   {
-    name: 'Adidas Event Tricot Jacket',
+    name: 'Event Tricot Jacket',
     price: 27.99,
     stock: 73,
     short_description:
@@ -110,7 +108,7 @@ export const products: IProduct[] = [
     image: '/images/products/adidas/adidas-event-tricot-jacket.webp'
   },
   {
-    name: 'Adidas Techfit Short Tights',
+    name: 'Techfit Short Tights',
     price: 20.99,
     stock: 73,
     short_description:
@@ -122,7 +120,7 @@ export const products: IProduct[] = [
     image: '/images/products/adidas/adidas-techfit-short-tights-black.webp'
   },
   {
-    name: 'Adidas Own The Run Long Sleeve Tee',
+    name: 'Run Long Sleeve Tee',
     price: 36.99,
     stock: 73,
     short_description:
@@ -134,7 +132,7 @@ export const products: IProduct[] = [
     image: '/images/products/adidas/adidas-own-the-run-long-sleeve-tee-pink.webp'
   },
   {
-    name: 'Adidas Essentials Slim 3-Stripes Tee Grey',
+    name: 'Essentials Slim 3-Stripes Tee',
     price: 18.99,
     stock: 73,
     short_description:
@@ -146,7 +144,7 @@ export const products: IProduct[] = [
     image: '/images/products/adidas/adidas-essentials-slim-3-stripes-tee-grey.webp'
   },
   {
-    name: 'Nike Invincible 3',
+    name: 'Invincible 3',
     price: 180.99,
     stock: 73,
     short_description:
@@ -158,7 +156,7 @@ export const products: IProduct[] = [
     image: '/images/products/nike/nike-invincible-3-blue.webp'
   },
   {
-    name: 'Nike Alphafly 2',
+    name: 'Alphafly 2',
     price: 275.99,
     stock: 73,
     short_description:
@@ -170,7 +168,7 @@ export const products: IProduct[] = [
     image: '/images/products/nike/nike-alphafly-2-orangered.webp'
   },
   {
-    name: 'Nike Everything Womens Support Bra Gray',
+    name: 'Everything Womens Support Bra',
     price: 42.99,
     stock: 73,
     short_description:
@@ -182,7 +180,7 @@ export const products: IProduct[] = [
     image: '/images/products/nike/nike-everything-womens-support-bra-gray.webp'
   },
   {
-    name: 'Nike One Womens Training Leggings',
+    name: 'One Womens Training Leggings',
     price: 28.97,
     stock: 73,
     short_description:
@@ -194,7 +192,7 @@ export const products: IProduct[] = [
     image: '/images/products/nike/nike-one-womens-training-leggings.webp'
   },
   {
-    name: 'Nike Air Jordan XXXVII SP Green',
+    name: 'Air Jordan XXXVII SP',
     price: 200.99,
     stock: 73,
     short_description:
@@ -206,7 +204,7 @@ export const products: IProduct[] = [
     image: '/images/products/nike/nike-air-jordan-xxxvii-sp-green.webp'
   },
   {
-    name: 'Nike Therma 2023 World Baseball Classic Dugout Blue',
+    name: '2023 World Baseball Classic Dugout',
     price: 80.99,
     stock: 73,
     short_description: 'The Nike Therma 2023 World Baseball Classic Dugout (USA Baseball) Hoodie.',
