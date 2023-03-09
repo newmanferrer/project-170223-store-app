@@ -113,10 +113,10 @@
       &:hover {
         cursor: pointer;
         transform: scale(1.1);
-        background-color: $success;
       }
 
-      &:active .cartImage {
+      &:active .cartImage,
+      &:active .detailImage {
         transform: scale(0.9);
       }
     }
