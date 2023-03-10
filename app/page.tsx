@@ -1,12 +1,15 @@
-import { Header, SectionBanner, SectionLatestProducts } from '../components'
+import { Header, SectionBanner, SectionLatestProducts, Footer } from '../components'
 import styles from './page.module.scss'
 
 export default async function HomePage() {
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <Header bgTransparent />
+
       <SectionBanner />
-      <SectionLatestProducts title='Latest Products' />
-    </main>
+      <SectionLatestProducts title='Latest Products' subtitle='These are our latest products' />
+
+      <Footer />
+    </div>
   )
 }
