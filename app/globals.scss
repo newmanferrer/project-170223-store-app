@@ -1,5 +1,12 @@
+//* ---------------------------------------------------------------------------
+//* Colors Import
+//* ---------------------------------------------------------------------------
 @use '../colors/colors' as *;
+//* ---------------------------------------------------------------------------
 
+//* ---------------------------------------------------------------------------
+//* Reset, General and Initial Styles
+//* ---------------------------------------------------------------------------
 *,
 *::before,
 *::after {
@@ -22,3 +29,46 @@ body {
   overflow-x: hidden;
   background-color: $primary-light;
 }
+//* ---------------------------------------------------------------------------
+
+//* ---------------------------------------------------------------------------
+//* Chrome and Edge Support (Scrollbar)
+//* ---------------------------------------------------------------------------
+body::-webkit-scrollbar {
+  width: 1rem; //* Vertical bar
+  height: 1rem; //* Horizontal bar
+}
+
+body::-webkit-scrollbar-track {
+  margin-block: 0.3rem;
+
+  border-radius: 100vw;
+  background-color: $primary-dark-accent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
+  border: 0.18rem solid $primary-dark-accent;
+  background: linear-gradient(
+    180deg,
+    rgb($color: $primary, $alpha: 0.5),
+    rgb($color: $primary, $alpha: 0.7),
+    rgb($color: $primary, $alpha: 0.9)
+  );
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb($color: $primary, $alpha: 0.7);
+}
+//* ---------------------------------------------------------------------------
+
+//* ---------------------------------------------------------------------------
+//* Firefox Support (Scrollbar)
+//* ---------------------------------------------------------------------------
+@supports (scrollbar-color: $primary $primary-dark-accent) {
+  * {
+    scrollbar-color: $primary $primary-dark-accent;
+    scrollbar-width: auto;
+  }
+}
+//* ---------------------------------------------------------------------------
