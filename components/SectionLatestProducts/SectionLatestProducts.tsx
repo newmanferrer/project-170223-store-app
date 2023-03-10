@@ -4,9 +4,10 @@ import styles from './SectionLatestProducts.module.scss'
 
 interface IProps {
   title: string
+  subtitle: string
 }
 
-export async function SectionLatestProducts({ title }: IProps) {
+export async function SectionLatestProducts({ title, subtitle }: IProps) {
   const prisma = new PrismaClient()
 
   const products = (
@@ -25,8 +26,12 @@ export async function SectionLatestProducts({ title }: IProps) {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.container__title}>{title}</h2>
-      <div className={styles.container__products_container}>
+      <div className={styles.container__title_and_subtitle_wrapper}>
+        <h2 className={styles.container__title_and_subtitle_wrapper__title}>{title}</h2>
+        <h3 className={styles.container__title_and_subtitle_wrapper__subtitle}>{subtitle}</h3>
+      </div>
+
+      <div className={styles.container__products_wrapper}>
         {products && products.map(product => <ProductCard key={product.id} product={product} />)}
       </div>
     </section>

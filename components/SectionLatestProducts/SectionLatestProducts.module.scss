@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 2rem 0.5rem;
 
   display: flex;
   flex-flow: column nowrap;
@@ -10,17 +10,35 @@
   justify-content: flex-start;
   align-items: center;
 
-  border: 1px solid green;
   background-color: $primary-light;
 
-  & .container__title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: $primary;
+  &__title_and_subtitle_wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    &__title,
+    &__subtitle {
+      text-align: center;
+
+      color: $primary;
+      font-weight: 700;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__subtitle {
+      font-family: var(--font-dancing-script);
+      font-size: 2.5rem;
+    }
   }
 
-  & .container__products_container {
+  &__products_wrapper {
     width: 100%;
     padding: 1rem;
 
@@ -32,7 +50,7 @@
   }
 
   @media screen and (min-width: 768px) {
-    .container__products_container {
+    &__products_wrapper {
       flex-flow: row nowrap;
     }
   }
