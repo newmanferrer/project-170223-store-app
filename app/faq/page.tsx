@@ -1,6 +1,11 @@
 import { Header } from '@/components'
 import styles from './page.module.scss'
 
+export const metadata = {
+  title: 'FAQ Page',
+  description: 'FAQ Page'
+}
+
 export default function FAQPage() {
   return (
     <main className={styles.container}>
