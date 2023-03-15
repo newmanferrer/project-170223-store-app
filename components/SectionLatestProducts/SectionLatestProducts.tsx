@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
+import { services } from '@/services'
 import { ProductCard } from '@/components'
 import styles from './SectionLatestProducts.module.scss'
 
@@ -8,21 +8,7 @@ interface IProps {
 }
 
 export async function SectionLatestProducts({ title, subtitle }: IProps) {
-  const prisma = new PrismaClient()
-
-  const products = (
-    await prisma.product.findMany({
-      where: {
-        tags: {
-          some: {
-            name: {
-              contains: 'latest'
-            }
-          }
-        }
-      }
-    })
-  ).slice(0, 3)
+  const latestProducts = await services.getAllLatestProductsStatic()
 
   return (
     <section className={styles.container}>
@@ -32,7 +18,8 @@ export async function SectionLatestProducts({ title, subtitle }: IProps) {
       </div>
 
       <div className={styles.container__products_wrapper}>
-        {products && products.map(product => <ProductCard key={product.id} product={product} />)}
+        {latestProducts &&
+          latestProducts.map(product => <ProductCard key={product.id} product={product} />)}
       </div>
     </section>
   )
