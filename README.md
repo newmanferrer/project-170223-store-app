@@ -69,6 +69,24 @@ Some of the most important features are:
 - It is equivalent to the parameter: "{ cache: 'force-cache' }", in Nextjs 13.
 
 ```js
+import { NextResponse } from 'next/server'
+import { type NextRequest } from 'next/server'
+
+export async function GET(request: NextRequest) {
+  const { method } = request
+  console.log('hello method: ', method)
+
+  try {
+    return new NextResponse('GET: Hello, Next.js!', { status: 200, statusText: 'GET OK' })
+  } catch (error) {
+    return NextResponse.json(error, { status: 500, statusText: 'GET ERROR: Internal Server Error' })
+  }
+}
+```
+
+```js
+import { NextResponse } from 'next/server'
+
 export async function GET() {
   const res = await fetch('https://data.mongodb-api.com/...', {
     headers: {
@@ -92,6 +110,25 @@ Route handlers are evaluated dynamically when:
 - 2.1.- Using the "Request object" with the GET method.
 - 2.2.- Using any of the other HTTP methods (POST, PUT, DELETE, HEAD, OPTIONS).
 - 2.3.- Using Dynamic Functions like cookies and headers.
+
+```js
+import { NextResponse } from 'next/server'
+import { type NextRequest } from 'next/server'
+
+export async function POST(request: NextRequest) {
+  const { method } = request
+  console.log('hello method: ', method)
+
+  try {
+    return NextResponse.json(
+      { response: 'POST: Hello, Next.js!' },
+      { status: 201, statusText: 'POST Created' }
+    )
+  } catch (error) {
+    return NextResponse.json(error, { status: 500, statusText: 'GET ERROR: Internal Server Error' })
+  }
+}
+```
 
 ```js
 export async function GET(request: Request) {
@@ -128,6 +165,22 @@ export async function POST() {
 ```
 
 ### 3.- Generate Increment HTML (Revalidating Static Data)
+
+```js
+import { NextResponse } from 'next/server'
+
+export async function GET() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      next: { revalidate: 60 }
+    })
+    const posts = await response.json()
+    return NextResponse.json(posts, { status: 200, statusText: 'GET OK' })
+  } catch (error) {
+    return NextResponse.json(error, { status: 500, statusText: 'GET ERROR: Internal Server Error' })
+  }
+}
+```
 
 ```js
 export async function GET() {
