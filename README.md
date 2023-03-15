@@ -35,6 +35,7 @@ Some of the most important features are:
 ## Resources and documentation used
 
 - Nextjs V13: https://beta.nextjs.org/docs
+- Nextjs V13.2: https://nextjs.org/blog
 - RLS: https://www.npmjs.com/package/react-loading-skeleton
 - Sass: https://sass-lang.com/
 
@@ -50,6 +51,94 @@ Some of the most important features are:
 2. Another option is to download the repository using ZIP format.
 3. Install the dependencies using the command "pnpm install", from the terminal console.
 4. From the terminal console, execute the “pnpm dev” command, to run the development server.
+
+---
+
+## The New In Next.js 13.2 (February 23rd 2023)
+
+### Route Handlers in folder "app" using "route.ts" or "route.js" file.
+
+- Link: https://nextjs.org/blog/next-13-2#custom-route-handlers
+
+### EXAMPLES
+
+### 1.- Generate static HTML (Static Route Handlers)
+
+- In nextjs 13.2 by default when using the GET method with the Response or NextResponse object.
+- It is equivalent to the old "getStaticProps()" in Nextjs 12.
+- It is equivalent to the parameter: "{ cache: 'force-cache' }", in Nextjs 13.
+
+```js
+export async function GET() {
+  const res = await fetch('https://data.mongodb-api.com/...', {
+    headers: {
+      'Content-Type': 'application/json',
+      'API-Key': process.env.DATA_API_KEY,
+    },
+  });
+
+  const data = await res.json();
+
+  return Response.json({ data })
+  or
+  return NextResponse.json({ data }) -> for TypeScript error
+}
+```
+
+### 2.- Generate Dynamic HTML (Dynamic Route Handlers)
+
+Route handlers are evaluated dynamically when:
+
+- 2.1.- Using the "Request object" with the GET method.
+- 2.2.- Using any of the other HTTP methods (POST, PUT, DELETE, HEAD, OPTIONS).
+- 2.3.- Using Dynamic Functions like cookies and headers.
+
+```js
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const id = searchParams.get('id')
+  const res = await fetch(`https://data.mongodb-api.com/product/${id}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      'API-Key': process.env.DATA_API_KEY
+    }
+  })
+
+  const product = await res.json()
+
+  return Response.json({ product })
+}
+```
+
+```js
+export async function POST() {
+  const res = await fetch('https://data.mongodb-api.com/...', {
+    headers: {
+      method: 'POST',
+      'Content-Type': 'application/json',
+      'API-Key': process.env.DATA_API_KEY
+    },
+    body: JSON.stringify({ time: new Date().toISOString() })
+  })
+
+  const data = await res.json()
+
+  return Response.json(data)
+}
+```
+
+### 3.- Generate Increment HTML (Revalidating Static Data)
+
+```js
+export async function GET() {
+  const res = await fetch('https://data.mongodb-api.com/...', {
+    next: { revalidate: 60 }
+  })
+  const data = await res.json()
+
+  return Response.json({ data })
+}
+```
 
 ---
 
