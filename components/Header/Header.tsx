@@ -1,22 +1,24 @@
 'use client'
 
 import { useNavigationMobileContext } from '../../contexts'
+import { useScrollYGreaterThan } from '@/hooks'
 import { Logo, Navigation, NavigationMobile, HamburgerIcon, CloseIcon } from '../'
 import { font_dancing_script } from '../../fonts'
 import styles from './Header.module.scss'
 
-interface IHeaderProps {
+interface IProps {
   bgTransparent?: boolean
 }
 
-export function Header({ bgTransparent = false }: IHeaderProps) {
+export function Header({ bgTransparent = false }: IProps) {
   const { navigationMobileIsOpen } = useNavigationMobileContext()
+  const { isGreater } = useScrollYGreaterThan(112)
 
   return (
     <header
-      className={`${styles.container} ${font_dancing_script.variable} ${
-        bgTransparent ? styles.bgTransparent : ''
-      }`}
+      className={`${styles.container} ${bgTransparent ? styles.bgTransparent : ''}  ${
+        isGreater ? styles.bgPrimaryColor : ''
+      } ${font_dancing_script.variable}`}
     >
       <Logo href='/' label='BestStore' />
 

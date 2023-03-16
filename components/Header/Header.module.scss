@@ -15,9 +15,15 @@
   left: 0;
   z-index: 10;
 
+  transition: all 0.5s ease-in-out;
+
   background-color: $primary;
 }
 
 .bgTransparent {
   background-color: transparent;
+}
+
+.bgPrimaryColor {
+  background-color: $primary;
 }
