@@ -9,10 +9,14 @@ export async function GET() {
         tags: {
           some: {
             name: {
-              contains: 'latest'
+              contains: 'most wanted'
             }
           }
         }
+      },
+      include: {
+        categories: true,
+        tags: true
       }
     })
     return NextResponse.json(products, { status: 200, statusText: 'GET OK' })
