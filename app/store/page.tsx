@@ -1,4 +1,5 @@
-import { Header } from '@/components'
+import { services } from '@/services'
+import { Header, SectionProducts } from '@/components'
 import styles from './page.module.scss'
 
 export const metadata = {
@@ -8,9 +9,16 @@ export const metadata = {
 
 export default function StorePage() {
   return (
-    <main className={styles.container}>
+    <div className={styles.container}>
       <Header />
-      <h1>Store Page</h1>
-    </main>
+
+      {/* https://beta.nextjs.org/docs/data-fetching/fetching */}
+      {/* @ts-expect-error Async Server Component */}
+      <SectionProducts
+        title='Store'
+        subtitle='These are all our products for you'
+        serviceFunction={services.getAllProductsStatic}
+      />
+    </div>
   )
 }
