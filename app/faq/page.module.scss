@@ -2,15 +2,16 @@
 
 .container {
   width: 100vw;
+  min-height: calc(100vh - 7rem);
   padding: 1rem clamp(1rem, 5vw + 1rem, 5rem) 1rem;
   margin-top: 7rem;
 
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
-  background-color: $primary-light;
+  @include backgroundLight;
 
   & h1 {
     margin-bottom: 0.5rem;
