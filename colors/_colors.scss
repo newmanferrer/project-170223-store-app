@@ -33,3 +33,25 @@ $skeleton-BaseColor: rgb(32, 32, 32);
 $skeleton-highlightColor: rgb(68, 68, 68);
 $skeleton-backgroundColor: rgb(59, 59, 59);
 //* =======================================================
+
+//* =======================================================
+//* 5.- BACKGROUND COLORS
+//* =======================================================
+@mixin backgroundLight() {
+  background-image: linear-gradient(
+    25deg,
+    rgb($color: $primary-dark-accent, $alpha: 0.4),
+    rgb($color: $primary-dark-accent, $alpha: 0.7),
+    rgb($color: $primary-dark-accent, $alpha: 0.9),
+    rgb($color: $primary-dark-accent, $alpha: 1)
+  );
+}
+
+@mixin backgroundDark() {
+  background-image: linear-gradient(
+    25deg,
+    rgb($color: $black, $alpha: 0.9),
+    rgb($color: $black, $alpha: 1)
+  );
+}
+//* =======================================================
