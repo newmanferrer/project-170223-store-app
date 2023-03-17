@@ -57,19 +57,9 @@
 }
 
 .backgroundLight {
-  background-image: linear-gradient(
-    25deg,
-    rgb($color: $primary-dark-accent, $alpha: 0.4),
-    rgb($color: $primary-dark-accent, $alpha: 0.7),
-    rgb($color: $primary-dark-accent, $alpha: 0.9),
-    rgb($color: $primary-dark-accent, $alpha: 1)
-  );
+  @include backgroundLight;
 }
 
 .backgroundDark {
-  background-image: linear-gradient(
-    25deg,
-    rgb($color: $black, $alpha: 0.9),
-    rgb($color: $black, $alpha: 1)
-  );
+  @include backgroundDark;
 }
