@@ -8,6 +8,7 @@ interface IProps {
   productQuantity: number
   serviceFunction: (quantity?: number) => Promise<IProduct[]>
   backgroundDark?: boolean
+  paddingTop?: boolean
 }
 
 export async function SectionProducts({
@@ -15,7 +16,8 @@ export async function SectionProducts({
   subtitle,
   productQuantity,
   serviceFunction,
-  backgroundDark
+  backgroundDark,
+  paddingTop
 }: IProps) {
   const latestProducts = await serviceFunction(productQuantity)
 
@@ -23,7 +25,7 @@ export async function SectionProducts({
     <section
       className={`${styles.container} ${styles.backgroundLight} ${
         backgroundDark ? styles.backgroundDark : ''
-      }`}
+      } ${paddingTop ? styles.paddingTop : ''}`}
     >
       <div className={styles.container__title_and_subtitle_wrapper}>
         <h2 className={styles.container__title_and_subtitle_wrapper__title}>{title}</h2>
