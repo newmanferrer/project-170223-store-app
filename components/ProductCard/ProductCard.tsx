@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { IProduct } from '@/models'
 import cartIcon from '@/public/images/shopping.cart.icons/cart.solid.svg'
 import detailsIcon from '@/public/images/shopping.cart.icons/details.info.solid.svg'
@@ -49,7 +50,11 @@ export function ProductCard({ product }: IProductCard) {
           />
         </button>
 
-        <button className={styles.buttons_wrapper__button_details} title='details'>
+        <Link
+          href={`store/${product.id}`}
+          className={styles.buttons_wrapper__button_details}
+          title='details'
+        >
           <Image
             src={detailsIcon}
             alt='cart icon'
@@ -57,7 +62,7 @@ export function ProductCard({ product }: IProductCard) {
             height={20}
             className={styles.detailImage}
           />
-        </button>
+        </Link>
       </div>
 
       <div className={styles.stock_and_price_wrapper}>
