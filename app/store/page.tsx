@@ -10,7 +10,7 @@ export const metadata = {
 export default function StorePage() {
   return (
     <div className={styles.container}>
-      <Header />
+      <Header bgTransparent />
 
       {/* https://beta.nextjs.org/docs/data-fetching/fetching */}
       {/* @ts-expect-error Async Server Component */}
@@ -18,6 +18,7 @@ export default function StorePage() {
         title='Store'
         subtitle='These are all our products for you'
         serviceFunction={services.getAllProductsStatic}
+        paddingTop
       />
     </div>
   )
