@@ -1,10 +1,10 @@
 import { services } from '@/services'
-import { Header, ProductCard } from '@/components'
+import { Header, ProductDetailsCard } from '@/components'
 import styles from './page.module.scss'
 
 export const metadata = {
-  title: 'Product Page',
-  description: 'Product Page'
+  title: 'Product Details Page',
+  description: 'Product Details Page'
 }
 
 interface IProps {
@@ -19,11 +19,9 @@ export default async function ProductDetailsPage({ params }: IProps) {
 
   return (
     <div className={styles.container}>
-      <Header />
+      <Header bgTransparent />
 
-      <h1>PRODUCT DETAILS PAGE</h1>
-      <div>Product ID: {productId}</div>
-      <ProductCard key={productId} product={product} />
+      <ProductDetailsCard key={productId} product={product} />
     </div>
   )
 }
