@@ -17,3 +17,4 @@ export { SectionBanner } from './SectionBanner/SectionBanner'
 export { SectionProducts } from './SectionProducts/SectionProducts'
 
 export { ProductCard } from './ProductCard/ProductCard'
+export { ProductDetailsCard } from './ProductDetailsCard/ProductDetailsCard'
