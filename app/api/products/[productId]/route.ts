@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { type NextRequest } from 'next/server'
-import { prisma } from '@/lib'
+import { getProductById } from '@/lib'
 
 interface IProps {
   params: {
@@ -12,20 +12,9 @@ interface IProps {
 export async function GET(request: NextRequest, { params }: IProps) {
   const productId = params.productId
 
-  console.log('Request: ', request)
-  console.log('API Params: ', params)
-  console.log('API Params Product ID: ', productId)
-
   try {
-    const product = await prisma.product.findUnique({
-      where: {
-        id: `${productId}`
-      },
-      include: {
-        categories: true,
-        tags: true
-      }
-    })
+    const { product, ErrorMessage } = await getProductById(productId)
+    if (ErrorMessage) throw new Error(ErrorMessage)
     return NextResponse.json(product, { status: 200, statusText: 'GET OK' })
   } catch (error) {
     return NextResponse.json(error, { status: 500, statusText: 'GET ERROR: Internal Server Error' })
