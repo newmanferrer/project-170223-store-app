@@ -8,14 +8,17 @@ interface IProps {
 }
 
 //* =====================================================================================
-//* Generate static HTML (Static Route Handlers) - OK
+//* λ - Generate Server Side Renders (Dynamic Route Handlers) - OK
 //* =====================================================================================
-//* Route Handlers are statically evaluated by default when using the GET method
-//* with the Response object.
-//* It is equivalent to the old "getStaticProps()" in Nextjs 12
-//* It is equivalent to put the parameter: "{ cache: 'force-cache' }" in Nextjs 13.0
+//* Route handlers are evaluated dynamically when:
+//* Using the Request object with the GET method.
+//* Using any of the other HTTP methods.
+//* Using Dynamic Functions like cookies and headers.
+//* -------------------------------------------------------------------------------------
+//* It is equivalent to the old "getServerSideProps()" in Nextjs 12
+//* It is equivalent to put the parameter: "{ cache: 'no-store' }" in Nextjs 13.0
 //* =====================================================================================
-export async function GET(response: NextRequest, { params }: IProps) {
+export async function GET(request: NextRequest, { params }: IProps) {
   const productId = params.productId
 
   try {
