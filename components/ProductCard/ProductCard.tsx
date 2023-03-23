@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { IProduct } from '@/models'
+import { Product } from '@prisma/client'
 import cartIcon from '@/public/images/shopping.cart.icons/cart.solid.svg'
 import detailsIcon from '@/public/images/shopping.cart.icons/details.info.solid.svg'
 import styles from './ProductCard.module.scss'
 
-interface IProductCard {
-  product: IProduct
+interface IPros {
+  product: Product
 }
 
-export function ProductCard({ product }: IProductCard) {
+export function ProductCard({ product }: IPros) {
   return (
     <article className={styles.container}>
       <div className={styles.brand_and_image_and_name_wrapper}>
