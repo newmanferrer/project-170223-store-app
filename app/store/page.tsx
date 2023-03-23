@@ -7,7 +7,9 @@ export const metadata = {
   description: 'Store Page'
 }
 
-export default function StorePage() {
+export default async function StorePage() {
+  const products = await services.getProducts()
+
   return (
     <div className={styles.container}>
       <Header bgTransparent />
@@ -17,7 +19,7 @@ export default function StorePage() {
       <SectionProducts
         title='Store'
         subtitle='These are all our products for you'
-        serviceFunction={services.getAllProductsStatic}
+        products={products}
         paddingTop
       />
     </div>

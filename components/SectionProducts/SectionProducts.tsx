@@ -1,26 +1,22 @@
+import { Product } from '@prisma/client'
 import { ProductCard } from '@/components'
 import styles from './SectionProducts.module.scss'
-import { IProduct } from '@/models'
 
 interface IProps {
   title: string
   subtitle: string
-  productQuantity: number
-  serviceFunction: (quantity?: number) => Promise<IProduct[]>
-  backgroundDark?: boolean
+  products: Product[]
   paddingTop?: boolean
+  backgroundDark?: boolean
 }
 
 export async function SectionProducts({
   title,
   subtitle,
-  productQuantity,
-  serviceFunction,
+  products,
   backgroundDark,
   paddingTop
 }: IProps) {
-  const latestProducts = await serviceFunction(productQuantity)
-
   return (
     <section
       className={`${styles.container} ${styles.backgroundLight} ${
@@ -33,8 +29,7 @@ export async function SectionProducts({
       </div>
 
       <div className={styles.container__products_wrapper}>
-        {latestProducts &&
-          latestProducts.map(product => <ProductCard key={product.id} product={product} />)}
+        {products && products.map(product => <ProductCard key={product.id} product={product} />)}
       </div>
     </section>
   )
