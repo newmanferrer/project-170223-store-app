@@ -1,18 +1,17 @@
 import { prisma } from '@/lib'
 
-type prismaError =
-  | any
-  | unknown
-  | {
-      route: string
-      function: string
-      message: string
-      code?: string
-      errorCode?: string
-      name?: string
-      meta?: string
-      clientVersion?: string
-    }
+interface customError {
+  route: string
+  function: string
+  message: string
+  code?: string
+  errorCode?: string
+  name?: string
+  meta?: string
+  clientVersion?: string
+}
+
+type prismaError = any | unknown | customError
 
 //* =====================================================================================
 //* 1.- GET ALL PRODUCTS - OK
@@ -23,16 +22,16 @@ export async function getProducts() {
     if (products.length === 0) throw new Error(`Products were not found`)
     return { products }
   } catch (error: prismaError) {
-    console.error('Error: lib/prisma/products/products.ts -> "getProducts"')
-    console.error('Error Message: ', error.message)
-    console.error('Prisma Error: ', error)
-
-    const CustomError = {
+    const CustomError: customError = {
       route: 'lib/prisma/products/products.ts',
       function: 'getProducts',
-      message: error.message
+      message: error.message,
+      code: error.code,
+      errorCode: error.errorCode,
+      name: error.name,
+      meta: error.meta,
+      clientVersion: error.clientVersion
     }
-
     return { CustomError }
   }
 }
@@ -52,21 +51,16 @@ export async function getProductById(productId: string) {
     })
     return { product }
   } catch (error: prismaError) {
-    console.error('Error: "lib/prisma/products/products.ts" -> "getProductById"')
-    console.error('Error Message: ', error.message)
-    console.error('Prisma Error: ', error)
-
     const CustomError = {
       route: 'lib/prisma/products/products.ts',
       function: 'getProductById',
+      message: error.message,
       code: error.code,
       errorCode: error.errorCode,
       name: error.name,
-      message: error.message,
       meta: error.meta,
       clientVersion: error.clientVersion
     }
-
     return { CustomError }
   }
 }
@@ -93,18 +87,14 @@ export async function getProductsByTag(productTag: string) {
       }
     })
     if (products.length === 0)
-      throw new Error(`Products with the tag: "${productTag}", were not found`)
+      throw new Error(`Products with the tag: ${productTag}, were not found`)
     return { products }
   } catch (error: prismaError) {
-    console.error('Error: lib/prisma/products/products.ts -> "getProductsByTag"')
-    console.error('Prisma Error: ', error)
-
     const CustomError = {
       route: 'lib/prisma/products/products.ts',
       function: 'getProductsByTag',
       message: error.message
     }
-
     return { CustomError }
   }
 }
