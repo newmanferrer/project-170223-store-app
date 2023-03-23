@@ -3,9 +3,9 @@ import { Product, ProductCategory, ProductTag } from '@prisma/client'
 type ProductIncludeRelations = Product & { categories: ProductCategory[]; tags: ProductTag[] }
 
 //* =====================================================================================
-//* 1.- Get All Products
+//* 1.- Get All Products - OK
 //* =====================================================================================
-const getProducts = async (): Promise<Product[]> => {
+const getProducts = async (): Promise<ProductIncludeRelations[]> => {
   return await fetch(`${process.env.BASE_URL}/api/products/get.all`).then(response =>
     response.json()
   )
@@ -13,7 +13,7 @@ const getProducts = async (): Promise<Product[]> => {
 //* =====================================================================================
 
 //* =====================================================================================
-//* 2.- Get Product By ID
+//* 2.- Get Product By ID - OK
 //* =====================================================================================
 const getProductById = async (productId: string): Promise<ProductIncludeRelations> => {
   return await fetch(`${process.env.BASE_URL}/api/products/${productId}`).then(response =>
@@ -23,9 +23,9 @@ const getProductById = async (productId: string): Promise<ProductIncludeRelation
 //* =====================================================================================
 
 //* =====================================================================================
-//* 3.- Latest Products
+//* 3.- Latest Products - OK
 //* =====================================================================================
-const getLatestProducts = async (): Promise<Product[]> => {
+const getLatestProducts = async (): Promise<ProductIncludeRelations[]> => {
   return await fetch(`${process.env.BASE_URL}/api/products/get.all.latest`).then(response =>
     response.json()
   )
@@ -33,9 +33,9 @@ const getLatestProducts = async (): Promise<Product[]> => {
 //* =====================================================================================
 
 //* =====================================================================================
-//* 4.- New Arrivals Products
+//* 4.- New Arrivals Products - OK
 //* =====================================================================================
-const getNewArrivalsProducts = async (): Promise<Product[]> => {
+const getNewArrivalsProducts = async (): Promise<ProductIncludeRelations[]> => {
   return await fetch(`${process.env.BASE_URL}/api/products/get.all.new.arrivals`).then(response =>
     response.json()
   )
@@ -43,10 +43,10 @@ const getNewArrivalsProducts = async (): Promise<Product[]> => {
 //* =====================================================================================
 
 //* =====================================================================================
-//* 5.- Most Wanted Products
+//* 5.- Most Wanted Products - OK
 //* =====================================================================================
 //* -------------------------------------------------------------------------------------
-const getMostWantedProducts = async (): Promise<Product[]> => {
+const getMostWantedProducts = async (): Promise<ProductIncludeRelations[]> => {
   return await fetch(`${process.env.BASE_URL}/api/products/get.all.most.wanted`).then(response =>
     response.json()
   )
