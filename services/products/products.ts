@@ -1,241 +1,66 @@
-import { IProduct } from '@/models'
+import { Product, ProductCategory, ProductTag } from '@prisma/client'
 
-//* *************************************************************************************
-//* 1.- All Products
-//* *************************************************************************************
-//* -------------------------------------------------------------------------------------
-//* 1.1.- Generate static HTML: OK
-//* -------------------------------------------------------------------------------------
-//* Default: It is equivalent to the old "getStaticProps()" in Nextjs 12
-//* Note: It is not necessary to put the parameter: "{ cache: 'force-cache' }"
-//* -------------------------------------------------------------------------------------
-const getAllProductsStatic = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all`, {
-    cache: 'force-cache'
-  }).then(response => response.json())
+type ProductIncludeRelations = Product & { categories: ProductCategory[]; tags: ProductTag[] }
+
+//* =====================================================================================
+//* 1.- Get All Products
+//* =====================================================================================
+const getProducts = async (): Promise<Product[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all`).then(response =>
+    response.json()
+  )
 }
-//* -------------------------------------------------------------------------------------
+//* =====================================================================================
 
-//* -------------------------------------------------------------------------------------
-//* 1.2.- Generate Dynamic HTML if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old "getServerSideProps()" in Nextjs 12
-//* -------------------------------------------------------------------------------------
-const getAllProductsDynamic = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all`, {
-    cache: 'no-store'
-  }).then(response => response.json())
+//* =====================================================================================
+//* 2.- Get Product By ID
+//* =====================================================================================
+const getProductById = async (productId: string): Promise<ProductIncludeRelations> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/${productId}`).then(response =>
+    response.json()
+  )
 }
-//* -------------------------------------------------------------------------------------
+//* =====================================================================================
 
-//* -------------------------------------------------------------------------------------
-//* 1.3.- Generate Increment HTML - Revalidate Data if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old (ISR) "Incremental Static Regeneration" in Nextjs 12
-//* Note: revalidate in seconds
-//* -------------------------------------------------------------------------------------
-const getAllProductsIncrement = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all`, {
-    next: { revalidate: 60 }
-  })
-    .then(response => response.json())
-    .then(dataJson => dataJson.products)
-}
-//* -------------------------------------------------------------------------------------
-//* *************************************************************************************
-
-//* *************************************************************************************
-//* 2.- One Product
-//* *************************************************************************************
-//* -------------------------------------------------------------------------------------
-//* 2.1.- Generate static HTML: OK
-//* -------------------------------------------------------------------------------------
-//* Default: It is equivalent to the old "getStaticProps()" in Nextjs 12
-//* Note: It is not necessary to put the parameter: "{ cache: 'force-cache' }"
-//* -------------------------------------------------------------------------------------
-const getProductStatic = async (productId: string): Promise<IProduct> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/${productId}`, {
-    cache: 'force-cache'
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-
-//* -------------------------------------------------------------------------------------
-//* 2.2.- Generate Dynamic HTML if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old "getServerSideProps()" in Nextjs 12
-//* -------------------------------------------------------------------------------------
-const getProductDynamic = async (productId: string): Promise<IProduct> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/${productId}`, {
-    cache: 'no-store'
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-
-//* -------------------------------------------------------------------------------------
-//* 2.3.- Generate Increment HTML - Revalidate Data if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old (ISR) "Incremental Static Regeneration" in Nextjs 12
-//* Note: revalidate in seconds
-//* -------------------------------------------------------------------------------------
-const getProductIncrement = async (productId: string): Promise<IProduct> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/${productId}`, {
-    next: { revalidate: 60 }
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-//* *************************************************************************************
-
-//* *************************************************************************************
+//* =====================================================================================
 //* 3.- Latest Products
-//* *************************************************************************************
-//* -------------------------------------------------------------------------------------
-//* 3.1.- Generate static HTML: OK
-//* -------------------------------------------------------------------------------------
-//* Default: It is equivalent to the old "getStaticProps()" in Nextjs 12
-//* Note: It is not necessary to put the parameter: "{ cache: 'force-cache' }"
-//* -------------------------------------------------------------------------------------
-const getAllLatestProductsStatic = async (quantity: number = 3): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.latest`, {
-    cache: 'force-cache'
-  })
-    .then(response => response.json())
-    .then(response => response.slice(0, quantity))
+//* =====================================================================================
+const getLatestProducts = async (): Promise<Product[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.latest`).then(response =>
+    response.json()
+  )
 }
-//* -------------------------------------------------------------------------------------
+//* =====================================================================================
 
-//* -------------------------------------------------------------------------------------
-//* 3.2.- Generate Dynamic HTML if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old "getServerSideProps()" in Nextjs 12
-//* -------------------------------------------------------------------------------------
-const getAllLatestProductsDynamic = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.latest`, {
-    cache: 'no-store'
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-
-//* -------------------------------------------------------------------------------------
-//* 3.3.- Generate Increment HTML - Revalidate Data if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old (ISR) "Incremental Static Regeneration" in Nextjs 12
-//* Note: revalidate in seconds
-//* -------------------------------------------------------------------------------------
-const getAllLatestProductsIncrement = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.latest`, {
-    next: { revalidate: 60 }
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-//* *************************************************************************************
-
-//* *************************************************************************************
+//* =====================================================================================
 //* 4.- New Arrivals Products
-//* *************************************************************************************
-//* -------------------------------------------------------------------------------------
-//* 4.1.- Generate static HTML: OK
-//* -------------------------------------------------------------------------------------
-//* Default: It is equivalent to the old "getStaticProps()" in Nextjs 12
-//* Note: It is not necessary to put the parameter: "{ cache: 'force-cache' }"
-//* -------------------------------------------------------------------------------------
-const getAllNewArrivalsProductsStatic = async (quantity: number = 3): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.new.arrivals`, {
-    cache: 'force-cache'
-  })
-    .then(response => response.json())
-    .then(response => response.slice(0, quantity))
+//* =====================================================================================
+const getNewArrivalsProducts = async (): Promise<Product[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.new.arrivals`).then(response =>
+    response.json()
+  )
 }
-//* -------------------------------------------------------------------------------------
+//* =====================================================================================
 
-//* -------------------------------------------------------------------------------------
-//* 4.2.- Generate Dynamic HTML if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old "getServerSideProps()" in Nextjs 12
-//* -------------------------------------------------------------------------------------
-const getAllNewArrivalsProductsDynamic = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.new.arrivals`, {
-    cache: 'no-store'
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-
-//* -------------------------------------------------------------------------------------
-//* 4.3.- Generate Increment HTML - Revalidate Data if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old (ISR) "Incremental Static Regeneration" in Nextjs 12
-//* Note: revalidate in seconds
-//* -------------------------------------------------------------------------------------
-const getAllNewArrivalsProductsIncrement = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.new.arrivals`, {
-    next: { revalidate: 60 }
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-//* *************************************************************************************
-
-//* *************************************************************************************
+//* =====================================================================================
 //* 5.- Most Wanted Products
-//* *************************************************************************************
+//* =====================================================================================
 //* -------------------------------------------------------------------------------------
-//* 5.1.- Generate static HTML: OK
-//* -------------------------------------------------------------------------------------
-//* Default: It is equivalent to the old "getStaticProps()" in Nextjs 12
-//* Note: It is not necessary to put the parameter: "{ cache: 'force-cache' }"
-//* -------------------------------------------------------------------------------------
-const getAllMostWantedProductsStatic = async (quantity: number = 3): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.most.wanted`, {
-    cache: 'force-cache'
-  })
-    .then(response => response.json())
-    .then(response => response.slice(0, quantity))
+const getMostWantedProducts = async (): Promise<Product[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.most.wanted`).then(response =>
+    response.json()
+  )
 }
-//* -------------------------------------------------------------------------------------
+//* =====================================================================================
 
-//* -------------------------------------------------------------------------------------
-//* 5.2.- Generate Dynamic HTML if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old "getServerSideProps()" in Nextjs 12
-//* -------------------------------------------------------------------------------------
-const getAllMostWantedProductsDynamic = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.most.wanted`, {
-    cache: 'no-store'
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-
-//* -------------------------------------------------------------------------------------
-//* 5.3.- Generate Increment HTML - Revalidate Data if receive a request: OK
-//* -------------------------------------------------------------------------------------
-//* It is equivalent to the old (ISR) "Incremental Static Regeneration" in Nextjs 12
-//* Note: revalidate in seconds
-//* -------------------------------------------------------------------------------------
-const getAllMostWantedProductsIncrement = async (): Promise<IProduct[]> => {
-  return await fetch(`${process.env.BASE_URL}/api/products/get.all.most.wanted`, {
-    next: { revalidate: 60 }
-  }).then(response => response.json())
-}
-//* -------------------------------------------------------------------------------------
-//* *************************************************************************************
-
-//* *************************************************************************************
+//* =====================================================================================
 //* 5.- Export
-//* *************************************************************************************
+//* =====================================================================================
 export const services = {
-  getAllProductsStatic,
-  getAllProductsDynamic,
-  getAllProductsIncrement,
-  getProductStatic,
-  getProductDynamic,
-  getProductIncrement,
-  getAllLatestProductsStatic,
-  getAllLatestProductsDynamic,
-  getAllLatestProductsIncrement,
-  getAllNewArrivalsProductsStatic,
-  getAllNewArrivalsProductsDynamic,
-  getAllNewArrivalsProductsIncrement,
-  getAllMostWantedProductsStatic,
-  getAllMostWantedProductsDynamic,
-  getAllMostWantedProductsIncrement
+  getProducts,
+  getProductById,
+  getLatestProducts,
+  getNewArrivalsProducts,
+  getMostWantedProducts
 }
-//* *************************************************************************************
+//* =====================================================================================
