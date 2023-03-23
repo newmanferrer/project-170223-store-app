@@ -1,4 +1,4 @@
-import { Header, SectionBanner, ProductCard, SectionProducts, Footer } from '../components'
+import { Header, SectionBanner, SectionProducts, Footer } from '../components'
 import { services } from '@/services'
 import styles from './page.module.scss'
 
