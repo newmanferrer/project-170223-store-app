@@ -15,7 +15,7 @@ interface IProps {
 
 export default async function ProductDetailsPage({ params }: IProps) {
   const productId = params.productId
-  const product = await services.getProductStatic(productId)
+  const product = await services.getProductById(productId)
 
   return (
     <div className={styles.container}>
