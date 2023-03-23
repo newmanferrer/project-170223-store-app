@@ -1,13 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { IProduct } from '@/models'
+import { Product, ProductCategory, ProductTag } from '@prisma/client'
 import styles from './ProductDetailsCard.module.scss'
 
-interface IProps {
-  product: IProduct
+interface IPros {
+  product: Product & {
+    categories: ProductCategory[]
+    tags: ProductTag[]
+  }
 }
 
-export function ProductDetailsCard({ product }: IProps) {
+export function ProductDetailsCard({ product }: IPros) {
   return (
     <article className={styles.container}>
       <section className={styles.container__image_and_name_wrapper}>
@@ -67,7 +70,7 @@ export function ProductDetailsCard({ product }: IProps) {
 
         <h4 className={styles.container__info_wrapper__id}>
           <span className={styles.container__info_wrapper__id__span}>ID</span>:{' '}
-          {product.id.slice(-12)}
+          {product?.id?.slice(-12)}
         </h4>
 
         <p className={styles.container__info_wrapper__description}>
