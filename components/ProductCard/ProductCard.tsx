@@ -3,13 +3,14 @@ import Link from 'next/link'
 import { Product } from '@prisma/client'
 import cartIcon from '@/public/images/shopping.cart.icons/cart.solid.svg'
 import detailsIcon from '@/public/images/shopping.cart.icons/details.info.solid.svg'
+import { blurDataURL } from '@/public/images/products/base64/blurDataURL'
 import styles from './ProductCard.module.scss'
 
 interface IPros {
   product: Product
 }
 
-export function ProductCard({ product }: IPros) {
+export default function ProductCard({ product }: IPros) {
   return (
     <article className={styles.container}>
       <div className={styles.brand_and_image_and_name_wrapper}>
@@ -19,6 +20,8 @@ export function ProductCard({ product }: IPros) {
             alt='brand logo'
             width={22}
             height={22}
+            blurDataURL={blurDataURL}
+            placeholder='blur'
             className={styles.brand_wrapper__brand_logo}
           />
           <h3 className={styles.brand_wrapper__brand_name}>{product.brand_name}</h3>
@@ -30,6 +33,9 @@ export function ProductCard({ product }: IPros) {
             alt={product.name}
             width={200}
             height={200}
+            priority
+            blurDataURL={blurDataURL}
+            placeholder='blur'
             className={styles.image_wrapper__image}
           />
         </div>
@@ -46,6 +52,8 @@ export function ProductCard({ product }: IPros) {
             alt='cart icon'
             width={20}
             height={20}
+            blurDataURL={blurDataURL}
+            placeholder='blur'
             className={styles.cartImage}
           />
         </button>
@@ -60,6 +68,8 @@ export function ProductCard({ product }: IPros) {
             alt='cart icon'
             width={20}
             height={20}
+            blurDataURL={blurDataURL}
+            placeholder='blur'
             className={styles.detailImage}
           />
         </Link>
