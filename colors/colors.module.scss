@@ -29,9 +29,10 @@ $danger: rgb(244, 67, 54);
 //* =======================================================
 //* 4.- SKELETON COLORS
 //* =======================================================
-$skeleton-BaseColor: rgb(32, 32, 32);
-$skeleton-highlightColor: rgb(68, 68, 68);
-$skeleton-backgroundColor: rgb(59, 59, 59);
+$skeleton-highlightColor: rgb(155, 155, 155);
+$skeleton-baseColor: rgb(135, 135, 135);
+$skeleton-backgroundColor-light: rgb(145, 145, 145);
+$skeleton-backgroundColor-dark: rgb(125, 125, 125);
 //* =======================================================
 
 :export {
@@ -51,7 +52,8 @@ $skeleton-backgroundColor: rgb(59, 59, 59);
   success: $success;
   danger: $danger;
 
-  skeletonBaseColor: $skeleton-BaseColor;
   skeletonHighlightColor: $skeleton-highlightColor;
-  skeletonBackgroundColor: $skeleton-backgroundColor;
+  skeletonBaseColor: $skeleton-baseColor;
+  skeletonBackgroundColorLight: $skeleton-backgroundColor-light;
+  skeletonBackgroundColorDark: $skeleton-backgroundColor-dark;
 }
