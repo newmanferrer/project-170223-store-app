@@ -1,13 +1,18 @@
+import { lazy, Suspense } from 'react'
 import { Product } from '@prisma/client'
-import { ProductCard } from '@/components'
+import { ProductCardSkeleton } from '@/components'
 import styles from './SectionProducts.module.scss'
+
+const ProductCard = lazy(() => import('../ProductCard/ProductCard'))
 
 interface IProps {
   title: string
   subtitle: string
   products: Product[]
+  minHeight100vh?: boolean
   paddingTop?: boolean
   backgroundDark?: boolean
+  skeletonQuantity: number
 }
 
 export async function SectionProducts({
@@ -15,13 +20,15 @@ export async function SectionProducts({
   subtitle,
   products,
   backgroundDark,
-  paddingTop
+  minHeight100vh,
+  paddingTop,
+  skeletonQuantity
 }: IProps) {
   return (
     <section
       className={`${styles.container} ${styles.backgroundLight} ${
         backgroundDark ? styles.backgroundDark : ''
-      } ${paddingTop ? styles.paddingTop : ''}`}
+      } ${paddingTop ? styles.paddingTop : ''} ${minHeight100vh ? styles.minHeight100vh : ''}`}
     >
       <div className={styles.container__title_and_subtitle_wrapper}>
         <h2 className={styles.container__title_and_subtitle_wrapper__title}>{title}</h2>
@@ -29,7 +36,9 @@ export async function SectionProducts({
       </div>
 
       <div className={styles.container__products_wrapper}>
-        {products && products.map(product => <ProductCard key={product.id} product={product} />)}
+        <Suspense fallback={<ProductCardSkeleton quantity={skeletonQuantity} />}>
+          {products && products.map(product => <ProductCard key={product.id} product={product} />)}
+        </Suspense>
       </div>
     </section>
   )
