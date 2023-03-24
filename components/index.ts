@@ -13,10 +13,12 @@ export { CartButton } from './CartButton/CartButton'
 export { Languages } from './Languages/Languages'
 export { LightDarkButton } from './LightDarkButton/LightDarkButton'
 
+export { Loader } from './Loader/Loader'
+
 export { SectionBanner } from './SectionBanner/SectionBanner'
 export { SectionProducts } from './SectionProducts/SectionProducts'
 
-export { ProductCard } from './ProductCard/ProductCard'
+export { default as ProductCard } from './ProductCard/ProductCard'
 export { ProductCardSkeleton } from './ProductCardSkeleton/ProductCardSkeleton'
 
 export { ProductDetailsCard } from './ProductDetailsCard/ProductDetailsCard'
