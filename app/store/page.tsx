@@ -20,6 +20,8 @@ export default async function StorePage() {
         title='Store'
         subtitle='These are all our products for you'
         products={products}
+        skeletonQuantity={9}
+        minHeight100vh
         paddingTop
       />
     </div>
