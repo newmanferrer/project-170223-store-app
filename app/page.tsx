@@ -18,14 +18,16 @@ export default async function HomePage() {
       <SectionProducts
         title='Latest Products'
         subtitle='These are our latest products'
-        products={latestProducts}
+        products={latestProducts.slice(0, 3)}
+        skeletonQuantity={3}
       />
 
       {/* @ts-expect-error Async Server Component */}
       <SectionProducts
         title='New Arrivals'
         subtitle='Look at our next products to arrive for you'
-        products={newArrivalsProducts}
+        products={newArrivalsProducts.slice(0, 3)}
+        skeletonQuantity={3}
         backgroundDark
       />
 
@@ -33,7 +35,8 @@ export default async function HomePage() {
       <SectionProducts
         title='Most Wanted'
         subtitle='These are the products most sought after by our customers'
-        products={mostWantedProducts}
+        products={mostWantedProducts.slice(0, 3)}
+        skeletonQuantity={3}
       />
 
       <Footer />
