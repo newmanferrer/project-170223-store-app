@@ -1,25 +1,25 @@
 @use '../../colors/colors' as *;
 
 .container {
-  width: 80px;
+  width: 60px;
   height: 40px;
   padding: 0.4rem 0.8rem;
 
   display: flex;
   flex-flow: row nowrap;
-  gap: 0.2rem;
-  justify-content: space-between;
+  gap: 1px;
+  justify-content: space-around;
   align-items: center;
 
   transition: all 0.4s ease-in-out;
 
   background-color: transparent;
 
-  & img {
+  &__image {
     transition: all 0.4s ease-in-out;
   }
 
-  & span {
+  &__span {
     margin-top: 4px;
     font-size: 1rem;
     color: $primary-light;
@@ -31,12 +31,12 @@
     cursor: pointer;
     border-color: $primary-light-accent;
 
-    & img {
+    & .container__image {
       filter: brightness(0) saturate(100%) invert(90%) sepia(9%) saturate(6640%) hue-rotate(166deg)
         brightness(79%) contrast(88%);
     }
 
-    & span {
+    & .container__span {
       color: $primary-light-accent;
     }
   }

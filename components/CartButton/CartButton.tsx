@@ -8,8 +8,14 @@ export function CartButton() {
 
   return (
     <div className={styles.container} onClick={toggleCart}>
-      <Image src={ShoppingCartIcon} alt='shopping cart icon' width={25} height={25} />
-      <span>({`${getNumberOfProducts()}`})</span>
+      <Image
+        className={styles.container__image}
+        src={ShoppingCartIcon}
+        alt='shopping cart icon'
+        width={25}
+        height={25}
+      />
+      <span className={styles.container__span}>({`${getNumberOfProducts()}`})</span>
     </div>
   )
 }
