@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useShoppingCartContext } from '@/contexts'
 import { Product } from '@prisma/client'
-import styles from './CartProductCard.module.css'
+import styles from './CartProductCard.module.scss'
 
 interface ICartProductCardProps {
   product: Product
