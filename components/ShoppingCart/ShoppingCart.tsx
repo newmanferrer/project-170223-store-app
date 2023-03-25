@@ -1,7 +1,7 @@
 'use client'
 
 import { useShoppingCartContext } from '@/contexts'
-import { CartProductCard } from '@/components'
+import { CloseIcon, CartProductCard } from '@/components'
 import styles from './ShoppingCart.module.scss'
 
 export const ShoppingCart = () => {
@@ -13,29 +13,32 @@ export const ShoppingCart = () => {
   }
 
   return (
-    <div className={styles.container} style={{ display: isOpen ? 'block' : 'none' }}>
-      <div className={styles.title_button_container}>
-        <h2>Shopping Cart</h2>
-        <button onClick={closeCart}>❌</button>
+    <div className={`${styles.container} ${isOpen ? styles.isOpen : ''}`}>
+      <div className={styles.container__title_and_button_wrapper}>
+        <h2 className={styles.container__title_and_button_wrapper__title}>Shopping Cart</h2>
+        <CloseIcon dark onClickFunction={closeCart} />
       </div>
 
       {cart.length === 0 ? (
-        <div className={styles.empty}>
-          <h3>Cart is empty!</h3>
-          <h4>Add one product...</h4>
+        <div className={styles.container__empty_wrapper}>
+          <h3 className={styles.container__empty_wrapper__title}>Cart is empty!</h3>
+          <h4 className={styles.container__empty_wrapper__subtitle}>Add one product...</h4>
         </div>
       ) : (
-        <div className={styles.products}>
-          <h3>Your Products</h3>
-          <>
-            {cart.map(product => (
-              <CartProductCard key={product.id} product={product} />
-            ))}
-          </>
-          <div>
-            <h3 className={styles.total}>Total: ${getTotal()}</h3>
+        <>
+          <div className={styles.container__products_wrapper}>
+            <h3 className={styles.container__products_wrapper__title}>Your Products</h3>
+            <>
+              {cart.map(product => (
+                <CartProductCard key={product.id} product={product} />
+              ))}
+            </>
           </div>
-        </div>
+
+          <div className={styles.container__total_wrapper}>
+            <h3 className={styles.container__total_wrapper__total}>Total: ${getTotal()}</h3>
+          </div>
+        </>
       )}
     </div>
   )
