@@ -11,7 +11,7 @@ interface IProps {
 }
 
 export function Header({ bgTransparent = false }: IProps) {
-  const { navigationMobileIsOpen } = useNavigationMobileContext()
+  const { navigationMobileIsOpen, closeNavigationMobile } = useNavigationMobileContext()
   const { isGreater } = useScrollYGreaterThan(112)
 
   return (
@@ -25,7 +25,11 @@ export function Header({ bgTransparent = false }: IProps) {
       <Navigation />
       <NavigationMobile />
 
-      {navigationMobileIsOpen ? <CloseIcon /> : <HamburgerIcon />}
+      {navigationMobileIsOpen ? (
+        <CloseIcon onClickFunction={closeNavigationMobile} />
+      ) : (
+        <HamburgerIcon />
+      )}
     </header>
   )
 }

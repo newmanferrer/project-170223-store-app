@@ -1,13 +1,15 @@
-import { useNavigationMobileContext } from '../../contexts'
 import styles from './CloseIcon.module.scss'
 
-export function CloseIcon() {
-  const { closeNavigationMobile } = useNavigationMobileContext()
+interface IProps {
+  dark?: boolean
+  onClickFunction?: () => void
+}
 
+export function CloseIcon({ dark, onClickFunction }: IProps) {
   return (
-    <div className={styles.container} onClick={closeNavigationMobile}>
-      <span></span>
-      <span></span>
+    <div className={`${styles.container} ${dark ? styles.dark : ''}`} onClick={onClickFunction}>
+      <span className={styles.container__span}></span>
+      <span className={styles.container__span}></span>
     </div>
   )
 }

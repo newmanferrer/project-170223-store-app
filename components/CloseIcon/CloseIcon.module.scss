@@ -11,7 +11,7 @@
 
   z-index: 30;
 
-  & span {
+  &__span {
     width: 30px;
     height: 5px;
 
@@ -23,11 +23,11 @@
     background-color: $primary-light;
   }
 
-  & span:nth-child(1) {
+  &__span:nth-child(1) {
     transform: rotate(45deg);
   }
 
-  & span:nth-child(2) {
+  &__span:nth-child(2) {
     transform: rotate(-45deg);
   }
 
@@ -35,7 +35,7 @@
     cursor: pointer;
     gap: 5px;
 
-    & span {
+    & .container__span {
       background-color: $primary-light-accent;
 
       &:nth-child(1) {
@@ -46,6 +46,12 @@
         transform: rotate(45deg);
       }
     }
+  }
+}
+
+.dark {
+  .container__span {
+    background-color: $primary;
   }
 }
 
