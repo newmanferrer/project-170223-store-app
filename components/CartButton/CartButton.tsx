@@ -1,16 +1,15 @@
 import Image from 'next/image'
+import { useShoppingCartContext } from '@/contexts'
 import styles from './CartButton.module.scss'
 import ShoppingCartIcon from '../../public/images/shopping.cart.icons/cart.solid.svg'
 
-interface IProps {
-  quantity?: number
-}
+export function CartButton() {
+  const { toggleCart, getNumberOfProducts } = useShoppingCartContext()
 
-export function CartButton({ quantity = 73 }: IProps) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={toggleCart}>
       <Image src={ShoppingCartIcon} alt='shopping cart icon' width={25} height={25} />
-      <span>({quantity})</span>
+      <span>({`${getNumberOfProducts()}`})</span>
     </div>
   )
 }
