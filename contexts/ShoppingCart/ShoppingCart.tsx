@@ -4,6 +4,8 @@
 //* ===========================================================================
 //* 1.- Imports
 //* ===========================================================================
+'use client'
+
 import { createContext, ReactNode, useState, useContext } from 'react'
 import { Product, ProductCategory, ProductTag } from '@prisma/client'
 //* ===========================================================================
