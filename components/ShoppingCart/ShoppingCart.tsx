@@ -1,8 +1,8 @@
 'use client'
 
-import { useShoppingCartContext } from '../../contexts'
+import { useShoppingCartContext } from '@/contexts'
 import { CartProductCard } from '@/components'
-import styles from './ShoppingCart.module.css'
+import styles from './ShoppingCart.module.scss'
 
 export const ShoppingCart = () => {
   const { cart, isOpen, closeCart } = useShoppingCartContext()
