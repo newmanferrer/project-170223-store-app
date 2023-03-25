@@ -22,3 +22,6 @@ export { default as ProductCard } from './ProductCard/ProductCard'
 export { ProductCardSkeleton } from './ProductCardSkeleton/ProductCardSkeleton'
 
 export { ProductDetailsCard } from './ProductDetailsCard/ProductDetailsCard'
+
+export { ShoppingCart } from './ShoppingCart/ShoppingCart'
+export { CartProductCard } from './CartProductCard/CartProductCard'
