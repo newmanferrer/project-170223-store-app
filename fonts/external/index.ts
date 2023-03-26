@@ -1,4 +1,4 @@
-import { Montserrat, Dancing_Script } from '@next/font/google'
+import { Montserrat, Dancing_Script } from 'next/font/google'
 
 //* =======================================================
 //* 1.- Montserrat Font (Sans Serif)
