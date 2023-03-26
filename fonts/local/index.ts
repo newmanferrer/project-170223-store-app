@@ -1,4 +1,4 @@
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
 
 //* -----------------------------------------------------------------
 //* 1.- Jet Brains Mono
