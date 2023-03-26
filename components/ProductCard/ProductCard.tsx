@@ -20,8 +20,6 @@ export default function ProductCard({ product }: IPros) {
             alt='brand logo'
             width={22}
             height={22}
-            blurDataURL={blurDataURL}
-            placeholder='blur'
             className={styles.brand_wrapper__brand_logo}
           />
           <h3 className={styles.brand_wrapper__brand_name}>{product.brand_name}</h3>
@@ -52,8 +50,6 @@ export default function ProductCard({ product }: IPros) {
             alt='cart icon'
             width={20}
             height={20}
-            blurDataURL={blurDataURL}
-            placeholder='blur'
             className={styles.cartImage}
           />
         </button>
@@ -68,8 +64,6 @@ export default function ProductCard({ product }: IPros) {
             alt='cart icon'
             width={20}
             height={20}
-            blurDataURL={blurDataURL}
-            placeholder='blur'
             className={styles.detailImage}
           />
         </Link>
