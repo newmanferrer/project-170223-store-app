@@ -16,7 +16,7 @@ export const ShoppingCart = () => {
     <div className={`${styles.container} ${isOpen ? styles.isOpen : ''}`}>
       <div className={styles.container__title_and_button_wrapper}>
         <h2 className={styles.container__title_and_button_wrapper__title}>Shopping Cart</h2>
-        <CloseIcon dark onClickFunction={closeCart} />
+        <CloseIcon colorPrimary onClickFunction={closeCart} />
       </div>
 
       {cart.length === 0 ? (
