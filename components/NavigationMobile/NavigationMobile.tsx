@@ -9,7 +9,7 @@ export function NavigationMobile() {
 
   return (
     <nav className={`${styles.container} ${navigationMobileIsOpen ? styles.isOpen : ''}`}>
-      <ul className={styles.ul}>
+      <ul className={styles.container__ul}>
         {links.map(({ id, label, route }) => (
           <li key={id}>
             <Link href={route} onClick={closeNavigationMobile}>
@@ -19,9 +19,11 @@ export function NavigationMobile() {
         ))}
       </ul>
 
-      <CartButton />
-      <LightDarkButton id='NavigationMobile' />
-      <Languages />
+      <section className={styles.container__section}>
+        <CartButton />
+        <LightDarkButton id='NavigationMobile' />
+        <Languages />
+      </section>
     </nav>
   )
 }

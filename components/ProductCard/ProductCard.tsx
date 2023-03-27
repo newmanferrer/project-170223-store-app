@@ -55,9 +55,9 @@ export default function ProductCard({ product }: IPros) {
         </button>
 
         <Link
-          href={`store/${product.id}`}
-          className={styles.buttons_wrapper__button_details}
+          href={`/products/${product.id}`}
           title='details'
+          className={styles.buttons_wrapper__button_details}
         >
           <Image
             src={detailsIcon}

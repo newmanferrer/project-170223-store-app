@@ -8,8 +8,8 @@ export const links: ILink[] = [
   },
   {
     id: 2,
-    label: 'Store',
-    route: '/store'
+    label: 'Products',
+    route: '/products'
   },
   {
     id: 3,
