@@ -1,15 +1,18 @@
-import styles from './CloseIcon.module.scss'
+'use client'
+
+import { Container, Span } from './StyledComponents'
 
 interface IProps {
-  dark?: boolean
+  colorPrimary?: boolean
+  mediaQueries?: boolean
   onClickFunction?: () => void
 }
 
-export function CloseIcon({ dark, onClickFunction }: IProps) {
+export function CloseIcon({ colorPrimary, mediaQueries, onClickFunction }: IProps) {
   return (
-    <div className={`${styles.container} ${dark ? styles.dark : ''}`} onClick={onClickFunction}>
-      <span className={styles.container__span}></span>
-      <span className={styles.container__span}></span>
-    </div>
+    <Container className='container' mediaQueries={mediaQueries} onClick={onClickFunction}>
+      <Span colorPrimary={colorPrimary} className='container__span' />
+      <Span colorPrimary={colorPrimary} className='container__span' />
+    </Container>
   )
 }
