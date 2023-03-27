@@ -1,0 +1,62 @@
+@use '@/colors/_colors.scss' as *;
+
+.container {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 30;
+
+  &__span {
+    width: 30px;
+    height: 5px;
+
+    position: absolute;
+
+    transition: transform 0.3s ease-in-out;
+
+    border-radius: 3px;
+    background-color: $primary-light;
+  }
+
+  &__span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  &__span:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+    gap: 5px;
+
+    & .container__span {
+      background-color: $primary-light-accent;
+
+      &:nth-child(1) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.dark {
+  .container__span {
+    background-color: $primary;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: none;
+  }
+}

@@ -1,5 +1,5 @@
 import { services } from '@/services'
-import { Header, SectionProducts } from '@/components'
+import { Header, SectionProducts } from '@/app/components'
 import styles from './page.module.scss'
 
 export const metadata = {

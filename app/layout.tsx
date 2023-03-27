@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { NavigationMobileProvider, ShoppingCartProvider } from '../contexts'
-import { ShoppingCart } from '@/components'
+import { ShoppingCart } from '@/app/components'
 import { font_montserrat, font_dancing_script, font_jetBrainsMono } from '../fonts'
 import './globals.scss'
 
