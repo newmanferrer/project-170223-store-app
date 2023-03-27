@@ -2,7 +2,7 @@
 
 import { Product } from '@prisma/client'
 import { useShoppingCartContext } from '@/contexts'
-import styles from './AddToCartButton.module.css'
+import styles from './AddToCartButton.module.scss'
 
 interface IAddToCartButtonProps {
   product: Product
