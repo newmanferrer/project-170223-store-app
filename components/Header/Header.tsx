@@ -26,7 +26,7 @@ export function Header({ bgTransparent = false }: IProps) {
       <NavigationMobile />
 
       {navigationMobileIsOpen ? (
-        <CloseIcon onClickFunction={closeNavigationMobile} />
+        <CloseIcon mediaQueries onClickFunction={closeNavigationMobile} />
       ) : (
         <HamburgerIcon />
       )}
