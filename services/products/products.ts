@@ -54,13 +54,112 @@ const getMostWantedProducts = async (): Promise<ProductIncludeRelations[]> => {
 //* =====================================================================================
 
 //* =====================================================================================
-//* 5.- Export
+//* 6.- Most Popular Products - OK
+//* =====================================================================================
+const getMostPopularProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.most.popular`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 7.- Most Anticipated Products - OK
+//* =====================================================================================
+const getMostAnticipatedProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.most.anticipated`).then(
+    response => response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 8.- Men Products - OK
+//* =====================================================================================
+const getMenProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.men`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 9.- Women Products - OK
+//* =====================================================================================
+const getWomenProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.women`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 10.- Kids Products - OK
+//* =====================================================================================
+const getKidsProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.kids`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 11.- Shoes Products - OK
+//* =====================================================================================
+const getShoesProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.shoes`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 12.- Adidas Products - OK
+//* =====================================================================================
+const getAdidasProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.adidas`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 13.- Nike Products - OK
+//* =====================================================================================
+const getNikeProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.nike`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 14.- Github Products - OK
+//* =====================================================================================
+const getGithubProducts = async (): Promise<ProductIncludeRelations[]> => {
+  return await fetch(`${process.env.BASE_URL}/api/products/get.all.github`).then(response =>
+    response.json()
+  )
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 15.- Export
 //* =====================================================================================
 export const services = {
   getProducts,
   getProductById,
   getLatestProducts,
   getNewArrivalsProducts,
-  getMostWantedProducts
+  getMostWantedProducts,
+  getMostPopularProducts,
+  getMostAnticipatedProducts,
+  getMenProducts,
+  getWomenProducts,
+  getKidsProducts,
+  getShoesProducts,
+  getAdidasProducts,
+  getNikeProducts,
+  getGithubProducts
 }
 //* =====================================================================================
