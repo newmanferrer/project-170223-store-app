@@ -1,0 +1,12 @@
+@use '@/colors/_colors.scss' as *;
+
+.container {
+  width: 100vw;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $primary-light;
+}
