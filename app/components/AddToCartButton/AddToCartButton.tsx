@@ -1,5 +1,3 @@
-'use client'
-
 import { Product } from '@prisma/client'
 import { useShoppingCartContext } from '@/contexts'
 import styles from './AddToCartButton.module.scss'

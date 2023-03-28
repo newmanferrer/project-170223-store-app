@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { useShoppingCartContext, useNavigationMobileContext } from '@/contexts'
 import styles from './CartButton.module.scss'

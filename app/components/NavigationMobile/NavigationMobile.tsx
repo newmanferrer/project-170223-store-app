@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { useNavigationMobileContext } from '@/contexts'
 import { CartButton, Languages, LightDarkButton } from '..'

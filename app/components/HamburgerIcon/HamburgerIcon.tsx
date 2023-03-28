@@ -1,5 +1,3 @@
-'use client'
-
 import { useNavigationMobileContext } from '@/contexts'
 import styles from './HamburgerIcon.module.scss'
 
