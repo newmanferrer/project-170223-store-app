@@ -67,7 +67,46 @@ export async function getProductById(productId: string) {
 //* =====================================================================================
 
 //* =====================================================================================
-//* 3.- GET PRODUCT BY TAG - OK
+//* 3.- GET PRODUCT BY  CATEGORY - OK
+//* =====================================================================================
+export async function getProductsByCategory(productCategory: string) {
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        categories: {
+          some: {
+            name: {
+              equals: productCategory
+            }
+          }
+        }
+      },
+      include: {
+        categories: true,
+        tags: true
+      }
+    })
+    if (products.length === 0)
+      throw new Error(`Products with the category: ${productCategory}, were not found`)
+    return { products }
+  } catch (error: prismaError) {
+    const CustomError = {
+      route: 'lib/prisma/products/products.ts',
+      function: 'getProductsByCategory',
+      message: error.message,
+      code: error.code,
+      errorCode: error.errorCode,
+      name: error.name,
+      meta: error.meta,
+      clientVersion: error.clientVersion
+    }
+    return { CustomError }
+  }
+}
+//* =====================================================================================
+
+//* =====================================================================================
+//* 4.- GET PRODUCT BY TAG - OK
 //* =====================================================================================
 export async function getProductsByTag(productTag: string) {
   try {
@@ -93,7 +132,12 @@ export async function getProductsByTag(productTag: string) {
     const CustomError = {
       route: 'lib/prisma/products/products.ts',
       function: 'getProductsByTag',
-      message: error.message
+      message: error.message,
+      code: error.code,
+      errorCode: error.errorCode,
+      name: error.name,
+      meta: error.meta,
+      clientVersion: error.clientVersion
     }
     return { CustomError }
   }
