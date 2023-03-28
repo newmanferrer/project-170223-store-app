@@ -84,7 +84,10 @@ export function ProductDetailsCard({ product }: IPros) {
           product.tags.length > 0 &&
           product.tags.map(({ id, name }) => (
             <li className={styles.container__tags_wrapper__li} key={id}>
-              <Link className={styles.container__tags_wrapper__li__link} href='/products'>
+              <Link
+                className={styles.container__tags_wrapper__li__link}
+                href={`/products/${name.replace(/\s/g, '-')}`}
+              >
                 {name}
               </Link>
             </li>
