@@ -1,5 +1,5 @@
 //* ///////////////////////////////////////////////////////////////////////////
-//* Global Contexts Provider
+//* Global Contexts Providers
 //* ///////////////////////////////////////////////////////////////////////////
 //* ===========================================================================
 //* 1.- Imports
@@ -12,9 +12,9 @@ import { ShoppingCartProvider, NavigationMobileProvider } from '@/contexts'
 //* 2.- Models / Interfaces
 //* ===========================================================================
 //* ---------------------------------------------------------------------------
-//* 2.1.- IGlobalContextsProviderProps
+//* 2.1.- IGlobalContextsProvidersProps
 //* ---------------------------------------------------------------------------
-interface IGlobalContextsProviderProps {
+interface IGlobalContextsProvidersProps {
   children: ReactNode
 }
 //* ---------------------------------------------------------------------------
@@ -23,7 +23,7 @@ interface IGlobalContextsProviderProps {
 //* ===========================================================================
 //* 3.- Create the Provider
 //* ===========================================================================
-function GlobalContextsProvider({ children }: IGlobalContextsProviderProps) {
+function GlobalContextsProviders({ children }: IGlobalContextsProvidersProps) {
   return (
     <ShoppingCartProvider>
       <NavigationMobileProvider>{children}</NavigationMobileProvider>
@@ -35,6 +35,6 @@ function GlobalContextsProvider({ children }: IGlobalContextsProviderProps) {
 //* ===========================================================================
 //* 4.- Export
 //* ===========================================================================
-export { GlobalContextsProvider }
+export { GlobalContextsProviders }
 //* ===========================================================================
 //* ///////////////////////////////////////////////////////////////////////////

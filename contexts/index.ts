@@ -1,4 +1,4 @@
-export { GlobalContextsProvider } from './GlobalContextsProvider/GlobalContextsProvider'
+export { GlobalContextsProviders } from './GlobalContextsProviders/GlobalContextsProviders'
 export { ShoppingCartProvider, useShoppingCartContext } from './ShoppingCart/ShoppingCart'
 export {
   NavigationMobileProvider,
