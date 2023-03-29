@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { GlobalContextsProvider } from '../contexts'
+import { GlobalContextsProviders } from '../contexts'
 import { ShoppingCart } from '@/app/components'
 import { font_montserrat, font_dancing_script, font_jetBrainsMono } from '../fonts'
 import './globals.scss'
@@ -23,17 +23,17 @@ interface IProps {
 
 export default function RootLayout({ children }: IProps) {
   return (
-    <GlobalContextsProvider>
-      <html
-        lang='en'
-        className={`${font_montserrat.variable} ${font_dancing_script.variable} ${font_jetBrainsMono.variable}`}
-      >
-        <head />
-        <body>
-          <main>{children}</main>
+    <html
+      lang='en'
+      className={`${font_montserrat.variable} ${font_dancing_script.variable} ${font_jetBrainsMono.variable}`}
+    >
+      <head />
+      <body>
+        <GlobalContextsProviders>
+          {children}
           <ShoppingCart />
-        </body>
-      </html>
-    </GlobalContextsProvider>
+        </GlobalContextsProviders>
+      </body>
+    </html>
   )
 }
