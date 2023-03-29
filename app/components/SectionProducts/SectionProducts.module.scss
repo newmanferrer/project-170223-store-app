@@ -54,6 +54,35 @@
       flex-flow: row wrap;
     }
   }
+
+  &__goToPageLink_wrapper {
+    width: 20rem;
+    padding: 1.5rem 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid $primary-light;
+    border-radius: 10px;
+    background-color: $primary;
+
+    &__link {
+      width: 100%;
+
+      text-align: center;
+      font-size: 1.2rem;
+      color: $primary-light;
+      text-decoration: none;
+
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        color: $success;
+      }
+    }
+  }
 }
 
 .backgroundLight {

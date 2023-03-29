@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+import Link from 'next/link'
 import { Product } from '@prisma/client'
 import { ProductCardSkeleton } from '@/app/components'
 import styles from './SectionProducts.module.scss'
@@ -13,6 +14,8 @@ interface IProps {
   paddingTop?: boolean
   backgroundDark?: boolean
   skeletonQuantity: number
+  goToPageLink?: string
+  goToPageLinkTitle?: string
 }
 
 export async function SectionProducts({
@@ -22,7 +25,9 @@ export async function SectionProducts({
   backgroundDark,
   minHeight100vh,
   paddingTop,
-  skeletonQuantity
+  skeletonQuantity,
+  goToPageLink,
+  goToPageLinkTitle
 }: IProps) {
   return (
     <section
@@ -40,6 +45,14 @@ export async function SectionProducts({
           {products && products.map(product => <ProductCard key={product.id} product={product} />)}
         </Suspense>
       </div>
+
+      {goToPageLink && goToPageLinkTitle && (
+        <div className={styles.container__goToPageLink_wrapper}>
+          <Link className={styles.container__goToPageLink_wrapper__link} href={goToPageLink}>
+            {goToPageLinkTitle}
+          </Link>
+        </div>
+      )}
     </section>
   )
 }

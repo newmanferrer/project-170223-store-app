@@ -20,6 +20,8 @@ export default async function HomePage() {
         subtitle='These are our latest products'
         products={latestProducts.slice(0, 3)}
         skeletonQuantity={3}
+        goToPageLink='products/latest'
+        goToPageLinkTitle='go to lates'
       />
 
       {/* @ts-expect-error Async Server Component */}
@@ -28,6 +30,8 @@ export default async function HomePage() {
         subtitle='Look at our next products to arrive for you'
         products={newArrivalsProducts.slice(0, 3)}
         skeletonQuantity={3}
+        goToPageLink='products/new-arrivals'
+        goToPageLinkTitle='go to new arrivals'
         backgroundDark
       />
 
@@ -37,6 +41,8 @@ export default async function HomePage() {
         subtitle='These are the products most sought after by our customers'
         products={mostWantedProducts.slice(0, 3)}
         skeletonQuantity={3}
+        goToPageLink='products/most-wanted'
+        goToPageLinkTitle='go to most wanted'
       />
 
       <Footer />
