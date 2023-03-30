@@ -27,3 +27,5 @@ export { ProductDetailsCard } from './ProductDetailsCard/ProductDetailsCard'
 export { ShoppingCart } from './ShoppingCart/ShoppingCart'
 export { CartProductCard } from './CartProductCard/CartProductCard'
 export { AddToCartButton } from './AddToCartButton/AddToCartButton'
+
+export { GlowingCornersEffect } from './GlowingCornersEffect/GlowingCornersEffect'

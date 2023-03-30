@@ -1,0 +1,50 @@
+@use '@/colors/_colors.scss' as *;
+
+.container {
+  margin: 5rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $primary;
+
+  &__div {
+    width: 600px;
+    height: 200px;
+    position: relative;
+
+    border-radius: 10px;
+    background-color: $primary;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      z-index: -1;
+
+      border-radius: 10px;
+      background: linear-gradient(
+        45deg,
+        rgba($primary-light-accent, 1),
+        rgba($primary, 0.5),
+        rgba($primary, 0.5),
+        rgba($primary-dark-accent, 1)
+      );
+    }
+
+    &::after {
+      filter: blur(20px);
+    }
+  }
+}
+
+/* background: linear-gradient(
+        45deg,
+        rgba(#00ccff, 1),
+        rgba($primary, 1),
+        rgba($primary, 1),
+        rgba(#d400d4, 1)
+      );
+ */
