@@ -56,20 +56,45 @@
   }
 
   &__goToPageLink_wrapper {
-    width: 20rem;
-    padding: 1.5rem 2rem;
+    width: 320px;
+    height: 80px;
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 
-    border: 2px solid $primary-light;
+    position: relative;
+    overflow: hidden;
+
     border-radius: 10px;
-    background-color: $primary;
+    background-color: $black;
+
+    &::before {
+      content: '';
+      width: 370px;
+      height: 370px;
+
+      position: absolute;
+      animation: rotate 5s linear infinite;
+
+      background: linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+    }
+
+    &::after {
+      content: '';
+      width: 310px;
+      height: 70px;
+
+      position: absolute;
+      border-radius: 10px;
+      background-color: $primary;
+    }
 
     &__link {
       width: 100%;
+
+      z-index: 2;
 
       text-align: center;
       font-size: 1.2rem;
@@ -79,7 +104,9 @@
       transition: all 0.5s ease-in-out;
 
       &:hover {
-        color: $success;
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        transform: scaleX(1.1);
       }
     }
   }
@@ -101,4 +128,14 @@
 .minHeight100vh {
   @extend .container;
   min-height: 100vh;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
