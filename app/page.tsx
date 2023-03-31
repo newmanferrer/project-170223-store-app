@@ -1,4 +1,4 @@
-import { Header, SectionBanner, SectionProducts, Footer } from '@/app/components'
+import { Header, SectionBanner, SectionProducts, SectionBrands, Footer } from '@/app/components'
 import { services } from '@/services'
 import styles from './page.module.scss'
 
@@ -12,6 +12,9 @@ export default async function HomePage() {
       <Header bgTransparent />
 
       <SectionBanner />
+
+      {/* @ts-expect-error Async Server Component */}
+      <SectionBrands title='BRANDS' subtitle='These are our brands for you' />
 
       {/* https://beta.nextjs.org/docs/data-fetching/fetching */}
       {/* @ts-expect-error Async Server Component */}

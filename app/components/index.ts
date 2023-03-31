@@ -18,6 +18,7 @@ export { Loader } from './Loader/Loader'
 
 export { SectionBanner } from './SectionBanner/SectionBanner'
 export { SectionProducts } from './SectionProducts/SectionProducts'
+export { SectionBrands } from './SectionBrands/SectionBrands'
 
 export { default as ProductCard } from './ProductCard/ProductCard'
 export { ProductCardSkeleton } from './ProductCardSkeleton/ProductCardSkeleton'
