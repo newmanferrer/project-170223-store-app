@@ -22,9 +22,13 @@ export async function SectionBrands({ title, subtitle }: IProps) {
 
       <div className={styles.container__brands_wrapper}>
         <div className={styles.container__adidas_wrapper}>
-          <Link className={styles.container__link} href='/products/adidas' title='go to adidas'>
+          <Link
+            className={`${styles.container__link} ${styles.adidas_wrapper__link}`}
+            href='/products/adidas'
+            title='go to adidas'
+          >
             <Image
-              className={`${styles.container__image} ${styles.container__image_blur}`}
+              className={`${styles.container__image} ${styles.adidas_wrapper__image}`}
               src={adidasImage}
               alt='adidas image'
               width={400}
@@ -34,7 +38,11 @@ export async function SectionBrands({ title, subtitle }: IProps) {
         </div>
 
         <div className={styles.container__github_wrapper}>
-          <Link className={styles.container__link} href='/products/github' title='go to github'>
+          <Link
+            className={`${styles.container__link} ${styles.github_wrapper__link}`}
+            href='/products/github'
+            title='go to github'
+          >
             <Image
               className={`${styles.container__image} ${styles.github_wrapper__image}`}
               src={githubImage}
@@ -47,7 +55,11 @@ export async function SectionBrands({ title, subtitle }: IProps) {
         </div>
 
         <div className={styles.container__nike_wrapper}>
-          <Link className={styles.container__link} href='/products/nike' title='go to nike'>
+          <Link
+            className={`${styles.container__link} ${styles.nike_wrapper__link}`}
+            href='/products/nike'
+            title='go to nike'
+          >
             <Image
               className={`${styles.container__image} ${styles.nike_wrapper__image}`}
               src={nikeImage}

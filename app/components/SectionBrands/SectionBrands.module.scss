@@ -60,20 +60,6 @@
 
     overflow: hidden;
     border: 1px solid $primary-light-accent;
-
-    &:hover .container__image {
-      transform: scale(1.3);
-    }
-  }
-
-  &__adidas_wrapper {
-    &:hover {
-      & .github_wrapper__image,
-      & .nike_wrapper__image {
-        width: 80%;
-        filter: blur(5px);
-      }
-    }
   }
 
   &__link {
@@ -92,6 +78,10 @@
     display: block;
     object-fit: contain;
     transition: all 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 }
 
