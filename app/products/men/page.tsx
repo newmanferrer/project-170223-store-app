@@ -23,6 +23,7 @@ export default async function MenPage() {
         skeletonQuantity={9}
         minHeight100vh
         paddingTop
+        backgroundDark
       />
     </div>
   )

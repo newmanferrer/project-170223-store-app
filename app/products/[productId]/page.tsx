@@ -19,7 +19,7 @@ export default async function ProductDetailsPage({ params }: IProps) {
 
   return (
     <div className={styles.container}>
-      <Header bgTransparent />
+      <Header />
 
       <ProductDetailsCard key={productId} product={product} />
     </div>

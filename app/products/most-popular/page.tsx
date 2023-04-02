@@ -12,7 +12,7 @@ export default async function MostPopularPage() {
 
   return (
     <div className={styles.container}>
-      <Header bgTransparent />
+      <Header />
 
       {/* https://beta.nextjs.org/docs/data-fetching/fetching */}
       {/* @ts-expect-error Async Server Component */}

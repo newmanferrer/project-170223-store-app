@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Github Page'
 }
 
-export default async function KidsPage() {
+export default async function GithubPage() {
   const products = await services.getGithubProducts()
 
   return (

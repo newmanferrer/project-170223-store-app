@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import Link from 'next/link'
-import { Product } from '@prisma/client'
+import { Product } from 'prisma/prisma-client'
 import { ProductCardSkeleton } from '@/app/components'
 import styles from './SectionProducts.module.scss'
 
@@ -36,8 +36,8 @@ export async function SectionProducts({
       } ${paddingTop ? styles.paddingTop : ''} ${minHeight100vh ? styles.minHeight100vh : ''}`}
     >
       <div className={styles.container__title_and_subtitle_wrapper}>
-        <h2 className={styles.container__title_and_subtitle_wrapper__title}>{title}</h2>
-        <h3 className={styles.container__title_and_subtitle_wrapper__subtitle}>{subtitle}</h3>
+        <h2 className={styles.container__title}>{title}</h2>
+        <h3 className={styles.container__subtitle}>{subtitle}</h3>
       </div>
 
       <div className={styles.container__products_wrapper}>
@@ -48,7 +48,7 @@ export async function SectionProducts({
 
       {goToPageLink && goToPageLinkTitle && (
         <div className={styles.container__goToPageLink_wrapper}>
-          <Link className={styles.container__goToPageLink_wrapper__link} href={goToPageLink}>
+          <Link className={styles.container__link} href={goToPageLink}>
             {goToPageLinkTitle}
           </Link>
         </div>

@@ -12,7 +12,7 @@ export default async function MostAnticipatedPage() {
 
   return (
     <div className={styles.container}>
-      <Header bgTransparent />
+      <Header />
 
       {/* https://beta.nextjs.org/docs/data-fetching/fetching */}
       {/* @ts-expect-error Async Server Component */}
@@ -23,6 +23,7 @@ export default async function MostAnticipatedPage() {
         skeletonQuantity={9}
         minHeight100vh
         paddingTop
+        backgroundDark
       />
     </div>
   )

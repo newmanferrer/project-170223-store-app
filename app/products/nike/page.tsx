@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Nike Page'
 }
 
-export default async function KidsPage() {
+export default async function NikePage() {
   const products = await services.getNikeProducts()
 
   return (
@@ -23,6 +23,7 @@ export default async function KidsPage() {
         skeletonQuantity={9}
         minHeight100vh
         paddingTop
+        backgroundDark
       />
     </div>
   )

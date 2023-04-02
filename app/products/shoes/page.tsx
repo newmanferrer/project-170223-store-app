@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Shoes Page'
 }
 
-export default async function WomenPage() {
+export default async function ShoesPage() {
   const products = await services.getShoesProducts()
 
   return (
@@ -23,6 +23,7 @@ export default async function WomenPage() {
         skeletonQuantity={9}
         minHeight100vh
         paddingTop
+        backgroundDark
       />
     </div>
   )
