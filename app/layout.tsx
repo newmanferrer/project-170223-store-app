@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { GlobalContextsProviders } from '../contexts'
 import { ShoppingCart } from '@/app/components'
-import { font_montserrat, font_dancing_script, font_jetBrainsMono } from '../fonts'
+import { font_montserrat, font_dancing_script, font_jetBrainsMono, font_acme } from '../fonts'
 import './globals.scss'
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: IProps) {
   return (
     <html
       lang='en'
-      className={`${font_montserrat.variable} ${font_dancing_script.variable} ${font_jetBrainsMono.variable}`}
+      className={`${font_montserrat.variable} ${font_dancing_script.variable} ${font_jetBrainsMono.variable} ${font_acme.variable}`}
     >
       <head />
       <body>

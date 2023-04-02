@@ -1,4 +1,4 @@
-import { Montserrat, Dancing_Script } from 'next/font/google'
+import { Montserrat, Dancing_Script, Acme } from 'next/font/google'
 
 //* =======================================================
 //* 1.- Montserrat Font (Sans Serif)
@@ -19,5 +19,16 @@ export const font_dancing_script = Dancing_Script({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-dancing-script'
+})
+//* =======================================================
+
+//* =======================================================
+//* 3.- Acme Font
+//* =======================================================
+export const font_acme = Acme({
+  display: 'swap',
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-acme'
 })
 //* =======================================================
