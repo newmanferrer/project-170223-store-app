@@ -1,6 +1,6 @@
 @use '@/colors/_colors.scss' as *;
 
-.container {
+.nav {
   width: 100vw;
   height: 100vh;
   padding-top: 7rem;
@@ -27,26 +27,26 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
+  }
 
-    & li {
-      list-style: none;
+  &__li {
+    list-style: none;
+  }
 
-      & a {
-        text-decoration: none;
-        color: $primary-light;
-        font-size: 1.3rem;
-        font-weight: bold;
+  &__link {
+    text-decoration: none;
+    color: $primary-light;
+    font-size: 1.3rem;
+    font-weight: bold;
 
-        transition: color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
 
-        &:hover {
-          color: $primary-light-accent;
-        }
-      }
+    &:hover {
+      color: $primary-light-accent;
     }
   }
 
-  &__section {
+  &__section_wrapper {
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
@@ -60,7 +60,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
+  .nav {
     display: none;
   }
 }

@@ -1,6 +1,6 @@
 @use '@/colors/_colors.scss' as *;
 
-.container {
+.article {
   width: 15rem;
   height: 25rem;
 
@@ -15,64 +15,65 @@
   border: 2px solid $skeleton-backgroundColor-dark;
   background-color: $skeleton-backgroundColor-dark;
 
-  & .brand_and_image_and_name_wrapper {
+  &__brand_and_image_and_name_wrapper {
     width: 100%;
     height: 85%;
 
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background-color: $skeleton-backgroundColor-light;
-
-    & .brand_wrapper {
-      width: 100%;
-      height: 15%;
-      padding: 1rem;
-
-      display: flex;
-      flex-flow: row nowrap;
-      gap: 0.5rem;
-      justify-content: flex-start;
-      align-items: center;
-
-      &__brand_name {
-        font-size: 1rem;
-      }
-    }
-
-    & .image_wrapper {
-      width: 100%;
-      height: 65%;
-
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-
-      overflow: hidden;
-
-      &__image {
-        transition: all 0.5s ease-in-out;
-      }
-    }
-
-    & .name_wrapper {
-      width: 100%;
-      height: 10%;
-      padding: 0.5rem;
-
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center;
-
-      &__name {
-        text-align: center;
-        font-size: 1rem;
-      }
-    }
   }
 
-  & .buttons_wrapper {
+  &__brand_wrapper {
+    width: 100%;
+    height: 15%;
+    padding: 1rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__brand_name {
+    font-size: 1rem;
+  }
+
+  &__image_wrapper {
+    width: 100%;
+    height: 65%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__name_wrapper {
+    width: 100%;
+    height: 10%;
+    padding: 0.5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  &__buttons_wrapper {
     width: 100%;
     height: 5%;
 
@@ -82,36 +83,36 @@
     align-items: center;
 
     position: relative;
-
-    &__button_add_to_cart,
-    &__button_details {
-      width: 2.5rem;
-      height: 2.5rem;
-
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center;
-
-      border: 3px solid $skeleton-highlightColor;
-      border-radius: 50%;
-      background-color: $skeleton-highlightColor;
-    }
-
-    &__button_add_to_cart {
-      position: absolute;
-      top: -20px;
-      left: 110px;
-    }
-
-    &__button_details {
-      position: absolute;
-      top: -20px;
-      left: 160px;
-    }
   }
 
-  & .stock_and_price_wrapper {
+  &__button_add_to_cart,
+  &__button_details {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid $skeleton-highlightColor;
+    border-radius: 50%;
+    background-color: $skeleton-highlightColor;
+  }
+
+  &__button_add_to_cart {
+    position: absolute;
+    top: -20px;
+    left: 110px;
+  }
+
+  &__button_details {
+    position: absolute;
+    top: -20px;
+    left: 160px;
+  }
+
+  &__stock_and_price_wrapper {
     width: 100%;
     height: 10%;
     padding: 0.5rem 1rem;
@@ -122,20 +123,20 @@
     align-items: center;
 
     position: relative;
+  }
 
-    &__stock,
-    &__price {
-      position: absolute;
-      top: 8px;
-      font-size: 1rem;
-    }
+  &__stock,
+  &__price {
+    position: absolute;
+    top: 8px;
+    font-size: 1rem;
+  }
 
-    &__stock {
-      left: 15px;
-    }
+  &__stock {
+    left: 15px;
+  }
 
-    &__price {
-      right: 15px;
-    }
+  &__price {
+    right: 15px;
   }
 }

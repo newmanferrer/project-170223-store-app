@@ -2,86 +2,85 @@
 
 .container {
   padding: 1rem;
-
   position: relative;
-
   cursor: pointer;
 
-  &:hover .ul {
-    display: block;
+  &__selected {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      margin-top: 9px;
+
+      background-image: url('../../../public/images/english.spanish.button/united-states-rectangle.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
-}
 
-.selected {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  &__ul {
+    width: 60px;
+    padding: 2px;
 
-  &::before {
-    content: '';
-    width: 30px;
-    height: 30px;
-    margin-top: 9px;
+    display: none;
+    position: absolute;
 
-    background-image: url('../../../public/images/english.spanish.button/united-states-rectangle.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
+    border: 1px solid $primary-light-accent;
+    background-color: $primary-light;
+    box-shadow: 0px 1px 10px rgba($color: $primary-dark, $alpha: 0.5);
   }
-}
 
-.ul {
-  width: 60px;
-  padding: 2px;
-
-  display: none;
-
-  position: absolute;
-
-  border: 1px solid $primary-light-accent;
-  background-color: $primary-light;
-  box-shadow: 0px 1px 10px rgba($color: $primary-dark, $alpha: 0.5);
-
-  & li {
+  &__li {
     list-style: none;
     transition: all 0.5s ease-in-out;
 
     &:hover {
       background-color: $primary-light-accent;
     }
+  }
 
-    & a {
-      padding-top: 5px 10px;
+  &__link {
+    padding-top: 5px 10px;
 
-      display: block;
+    display: block;
 
-      color: $primary-dark;
-      font-weight: bold;
+    color: $primary-dark;
+    font-weight: bold;
 
-      text-decoration: none;
+    text-decoration: none;
 
-      &::before {
-        content: '';
-        width: 25px;
-        height: 25px;
-        margin-top: 6px;
-        margin-right: 5px;
+    &::before {
+      content: '';
+      width: 25px;
+      height: 25px;
+      margin-top: 6px;
+      margin-right: 5px;
 
-        display: inline-block;
+      display: inline-block;
 
-        vertical-align: middle;
+      vertical-align: middle;
 
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-
-      &.english::before {
-        background-image: url('../../../public/images/english.spanish.button/united-states-rectangle.svg');
-      }
-
-      &.spanish::before {
-        background-image: url('../../../public/images/english.spanish.button/spain-rectangle.svg');
-      }
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
+
+  &:hover {
+    .container__ul {
+      display: block;
+    }
+  }
+}
+
+.container__link_english::before {
+  background-image: url('../../../public/images/english.spanish.button/united-states-rectangle.svg');
+}
+
+.container__link_spanish::before {
+  background-image: url('../../../public/images/english.spanish.button/spain-rectangle.svg');
 }

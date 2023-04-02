@@ -10,10 +10,22 @@ interface IProps {
 export function LightDarkButton({ id }: IProps) {
   return (
     <>
-      <input type='checkbox' id={id} className={styles.input} />
+      <input className={styles.input} type='checkbox' id={id} />
       <label className={styles.label} htmlFor={id}>
-        <Image className={styles.sun} src={sun} width={20} height={20} alt='sun image' />
-        <Image className={styles.moon} src={moon} width={25} height={25} alt='moon image' />
+        <Image
+          className={`${styles.image} ${styles.image_sun}`}
+          src={sun}
+          width={20}
+          height={20}
+          alt='sun image'
+        />
+        <Image
+          className={`${styles.image} ${styles.image_moon}`}
+          src={moon}
+          width={25}
+          height={25}
+          alt='moon image'
+        />
       </label>
     </>
   )

@@ -12,36 +12,31 @@ interface IPros {
 
 export function ProductDetailsCard({ product }: IPros) {
   return (
-    <article className={styles.container}>
-      <section className={styles.container__image_and_name_wrapper}>
+    <article className={styles.article}>
+      <section className={styles.article__image_and_name_wrapper}>
         <Image
-          className={styles.container__image_and_name_wrapper__image}
+          className={styles.article__image}
           src={product.image}
           alt={product.name}
           width={500}
           height={500}
         />
-        <h1 className={styles.container__image_and_name_wrapper__name}>{product.name}</h1>
+        <h1 className={`${styles.article__title} ${styles.article__title_h1}`}>{product.name}</h1>
       </section>
 
-      <section className={styles.container__info_wrapper}>
-        <h2 className={styles.container__info_wrapper__title}>Product Details</h2>
+      <section className={styles.article__info_wrapper}>
+        <h2 className={`${styles.article__title} ${styles.article__title_h2}`}>Product Details</h2>
 
-        <h3 className={styles.container__info_wrapper__name}>
-          <span className={styles.container__info_wrapper__name__span}>Name</span>: {product.name}
-        </h3>
+        <h4 className={`${styles.article__title} ${styles.article__title_h4}`}>
+          <span className={styles.article__span}>Name</span>: {product.name}
+        </h4>
 
-        <div className={styles.container__info_wrapper__brand_name_and_logo_wrapper}>
-          <h4 className={styles.container__info_wrapper__brand_name_and_logo_wrapper__name}>
-            <span
-              className={styles.container__info_wrapper__brand_name_and_logo_wrapper__name__span}
-            >
-              Brand
-            </span>
-            : {product.brand_name}
+        <div className={styles.article__brand_name_and_logo_wrapper}>
+          <h4 className={`${styles.article__title} ${styles.article__title_h4}`}>
+            <span className={styles.article__span}>Brand</span>: {product.brand_name}
           </h4>
           <Image
-            className={styles.container__info_wrapper__brand_name_and_logo_wrapper__logo}
+            className={styles.article__logo}
             src={product.brand_logo}
             alt='brand logo'
             width={25}
@@ -49,45 +44,37 @@ export function ProductDetailsCard({ product }: IPros) {
           />
         </div>
 
-        <h4 className={styles.container__info_wrapper__price}>
-          <span className={styles.container__info_wrapper__price__span}>Price</span>: $
-          {product.price}
+        <h4 className={`${styles.article__title}${styles.article__title_h4}`}>
+          <span className={styles.article__span}>Price</span>: ${product.price}
         </h4>
 
-        <h4 className={styles.container__info_wrapper__stock}>
-          <span className={styles.container__info_wrapper__stock__span}>Stock</span>:{' '}
-          {product.stock} units
+        <h4 className={`${styles.article__title} ${styles.article__title_h4}`}>
+          <span className={styles.article__span}>Stock</span>: {product.stock} units
         </h4>
 
         {product.categories &&
           product.categories.length > 0 &&
           product.categories.map(({ id, name }) => (
-            <h4 className={styles.container__info_wrapper__category} key={id}>
-              <span className={styles.container__info_wrapper__category__span}>Category</span>:{' '}
-              {name}
+            <h4 className={`${styles.article__title} ${styles.article__title_h4}`} key={id}>
+              <span className={styles.article__span}>Category</span>: {name}
             </h4>
           ))}
 
-        <h4 className={styles.container__info_wrapper__id}>
-          <span className={styles.container__info_wrapper__id__span}>ID</span>:{' '}
-          {product?.id?.slice(-12)}
+        <h4 className={`${styles.article__title} ${styles.article__title_h4}`}>
+          <span className={styles.article__span}>ID</span>: {product?.id?.slice(-12)}
         </h4>
 
-        <p className={styles.container__info_wrapper__description}>
-          <span className={styles.container__info_wrapper__description__span}>Description</span>:
-          {product.long_description}
+        <p className={styles.article__paragraph}>
+          <span className={styles.article__span}>Description</span>: {product.long_description}
         </p>
       </section>
 
-      <section className={styles.container__tags_wrapper}>
+      <section className={styles.article__tags_wrapper}>
         {product.tags &&
           product.tags.length > 0 &&
           product.tags.map(({ id, name }) => (
-            <li className={styles.container__tags_wrapper__li} key={id}>
-              <Link
-                className={styles.container__tags_wrapper__li__link}
-                href={`/products/${name.replace(/\s/g, '-')}`}
-              >
+            <li className={styles.article__li} key={id}>
+              <Link className={styles.article__link} href={`/products/${name.replace(/\s/g, '-')}`}>
                 {name}
               </Link>
             </li>

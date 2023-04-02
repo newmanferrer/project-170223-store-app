@@ -8,7 +8,7 @@ interface Props {
 
 export function Logo({ href = '/', label }: Props) {
   return (
-    <Link href={href} className={styles.container}>
+    <Link href={href} className={styles.link}>
       {label}
     </Link>
   )

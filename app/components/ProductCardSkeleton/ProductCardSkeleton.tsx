@@ -19,61 +19,46 @@ export function ProductCardSkeleton({ quantity = 1 }: IPros) {
       duration={2}
     >
       {[...Array(quantity)].map(index => (
-        <div className={styles.container} key={index}>
-          <div className={styles.brand_and_image_and_name_wrapper}>
-            <div className={styles.brand_wrapper}>
-              <Skeleton
-                className={styles.brand_wrapper__brand_logo}
-                circle
-                width={25}
-                height={25}
-              />
+        <article className={styles.article} key={index}>
+          <div className={styles.article__brand_and_image_and_name_wrapper}>
+            <div className={styles.article__brand_wrapper}>
+              <Skeleton className={styles.article__brand_logo} circle width={25} height={25} />
               <h3>
-                <Skeleton
-                  className={styles.brand_wrapper__brand_name}
-                  count={1}
-                  width={40}
-                  height={17}
-                />
+                <Skeleton className={styles.article__brand_name} count={1} width={40} height={17} />
               </h3>
             </div>
 
-            <div className={styles.image_wrapper}>
-              <Skeleton className={styles.image_wrapper__image} width={200} height={200} />
+            <div className={styles.article__image_wrapper}>
+              <Skeleton className={styles.article__image} width={200} height={200} />
             </div>
 
-            <div className={styles.name_wrapper}>
+            <div className={styles.article__name_wrapper}>
               <h2>
-                <Skeleton className={styles.name_wrapper__name} count={1} width={150} height={25} />
+                <Skeleton className={styles.article__name} count={1} width={150} height={25} />
               </h2>
             </div>
           </div>
 
-          <div className={styles.buttons_wrapper}>
-            <button className={styles.buttons_wrapper__button_add_to_cart}>
-              <Skeleton className={styles.cartImage} circle width={36} height={36} />
+          <div className={styles.article__buttons_wrapper}>
+            <button className={styles.article__button_add_to_cart}>
+              <Skeleton className={styles.article__cart_image} circle width={36} height={36} />
             </button>
 
-            <button className={styles.buttons_wrapper__button_details} title='details'>
-              <Skeleton className={styles.detailImage} circle width={36} height={36} />
+            <button className={styles.article__button_details} title='details'>
+              <Skeleton className={styles.article__detail_image} circle width={36} height={36} />
             </button>
           </div>
 
-          <div className={styles.stock_and_price_wrapper}>
+          <div className={styles.article__stock_and_price_wrapper}>
             <h3>
-              <Skeleton
-                className={styles.stock_and_price_wrapper__stock}
-                count={1}
-                width={80}
-                height={20}
-              />
+              <Skeleton className={styles.article__stock} count={1} width={80} height={20} />
             </h3>
 
             <h3>
-              <Skeleton className={styles.stock_and_price_wrapper__price} width={60} height={20} />
+              <Skeleton className={styles.article__price} width={60} height={20} />
             </h3>
           </div>
-        </div>
+        </article>
       ))}
     </SkeletonTheme>
   )

@@ -6,9 +6,9 @@ export function HamburgerIcon() {
 
   return (
     <div className={styles.container} onClick={openNavigationMobile}>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span className={styles.container__span}></span>
+      <span className={styles.container__span}></span>
+      <span className={styles.container__span}></span>
     </div>
   )
 }

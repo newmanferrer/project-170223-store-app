@@ -52,14 +52,16 @@
   }
 }
 
-.sun {
+.image {
   position: absolute;
+}
+
+.image_sun {
   top: 2.5px;
   left: 2px;
 }
 
-.moon {
-  position: absolute;
+.image_moon {
   top: 0.5px;
   right: 2px;
 }

@@ -4,16 +4,16 @@ import styles from './Languages.module.scss'
 export function Languages() {
   return (
     <div className={styles.container}>
-      <div className={styles.selected}></div>
-      <ul className={styles.ul}>
-        <li>
-          <Link href='#' className={styles.english}>
-            En
+      <div className={styles.container__selected}></div>
+      <ul className={styles.container__ul}>
+        <li className={styles.container__li}>
+          <Link className={`${styles.container__link} ${styles.container__link_english}`} href='#'>
+            en
           </Link>
         </li>
-        <li>
-          <Link href='#' className={styles.spanish}>
-            Sp
+        <li className={styles.container__li}>
+          <Link className={`${styles.container__link} ${styles.container__link_spanish}`} href='#'>
+            es
           </Link>
         </li>
       </ul>

@@ -7,7 +7,7 @@
 
   transition: all 0.1s ease-in-out;
 
-  & span {
+  &__span {
     width: 40px;
     height: 5px;
 
@@ -23,7 +23,7 @@
     cursor: pointer;
     gap: 5px;
 
-    & span {
+    .container__span {
       background-color: $primary-light-accent;
     }
   }
