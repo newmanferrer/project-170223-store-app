@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, MutableRefObject } from 'react'
+import { useState, useEffect, MutableRefObject, useMemo } from 'react'
 
 interface IObserverOptions {
   root?: HTMLElement | null
@@ -9,7 +9,7 @@ interface IObserverOptions {
 }
 
 interface IProps {
-  visorRef: MutableRefObject<HTMLElement | null>
+  targetRef: MutableRefObject<HTMLElement | null>
   options?: IObserverOptions
 }
 
@@ -19,25 +19,27 @@ const initialOptions: IObserverOptions = {
   threshold: 1.0
 }
 
-export function useVisible({ visorRef, options = initialOptions }: IProps) {
-  const [visible, setVisible] = useState(false)
+export function useVisible({ targetRef, options = initialOptions }: IProps) {
+  const [isVisible, setIsVisible] = useState(false)
+
+  const callbackFunction = (entries: any[]) => {
+    const entry = entries[0] // const [entry] = entries
+    setIsVisible(entry.isIntersecting)
+  }
+
+  const optionsMemo = useMemo(() => {
+    return options
+  }, [options])
 
   useEffect(() => {
-    const current = visorRef?.current
-
-    const callbackFunction = (entries: any) => {
-      const entry = entries[0]
-      setVisible(entry.isIntersecting)
-    }
-
-    const observer = new IntersectionObserver(callbackFunction, options)
-
+    const current = targetRef?.current
+    const observer = new IntersectionObserver(callbackFunction, optionsMemo)
     if (current) observer.observe(current)
 
     return () => {
       if (current) observer.disconnect()
     }
-  }, [options, visorRef])
+  }, [targetRef, optionsMemo])
 
-  return { visible }
+  return { isVisible }
 }
