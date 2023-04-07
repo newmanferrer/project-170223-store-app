@@ -1,4 +1,4 @@
-import { Product, ProductCategory, ProductTag } from '@prisma/client'
+import { Product, ProductCategory, ProductTag } from 'prisma/prisma-client'
 
 type ProductIncludeRelations = Product & { categories: ProductCategory[]; tags: ProductTag[] }
 
