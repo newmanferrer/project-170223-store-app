@@ -1,7 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { IWindowSize } from './model'
+
+export interface IWindowSize {
+  width: number
+  height: number
+}
 
 const windowSizeInitialState: IWindowSize = {
   width: 0,
