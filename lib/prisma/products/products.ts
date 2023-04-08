@@ -19,7 +19,7 @@ type prismaError = any | unknown | customError
 export async function getProducts() {
   try {
     const products = await prisma.product.findMany({ include: { categories: true, tags: true } })
-    if (products.length === 0) throw new Error(`Products were not found`)
+    if (products.length === 0) throw new Error('Products were not found')
     return { products }
   } catch (error: prismaError) {
     const CustomError: customError = {
