@@ -118,7 +118,9 @@ function ShoppingCartProvider({ children }: IShoppingCartProviderProps) {
   }
 
   const getNumberOfProducts = () => {
-    const total = cart.reduce((acc: number, product: Product) => acc + product.stock, 0)
+    // const total = cart.reduce((acc: number, product: Product) => acc + product.stock, 0)
+    let total = 0
+    cart.map(product => (total = total + product.stock))
     return total
   }
 
