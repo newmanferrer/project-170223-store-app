@@ -6,9 +6,6 @@ export const metadata = {
   description: 'FAQ Page'
 }
 
-//* SSG: Static Site Generator
-export const dynamic = 'error'
-
 export default function FAQPage() {
   return (
     <main className={styles.container}>

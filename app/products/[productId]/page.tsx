@@ -9,9 +9,6 @@ interface IProps {
   }
 }
 
-//* ISR: Incremental Static Regeneration
-export const revalidate = 60
-
 export async function generateMetadata({ params }: IProps) {
   const productId = params.productId
   const product = await services.getProductById(productId)
