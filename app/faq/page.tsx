@@ -1,10 +1,13 @@
-import { Header } from '@/app/components'
+import { Header } from '@/components'
 import styles from './page.module.scss'
 
 export const metadata = {
   title: 'FAQ Page',
   description: 'FAQ Page'
 }
+
+//* SSG: Static Site Generator
+export const dynamic = 'error'
 
 export default function FAQPage() {
   return (

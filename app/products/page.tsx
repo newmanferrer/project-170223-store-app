@@ -1,11 +1,14 @@
 import { services } from '@/services'
-import { Header, SectionProducts } from '@/app/components'
+import { Header, SectionProducts } from '@/components'
 import styles from './page.module.scss'
 
 export const metadata = {
   title: 'Products Page',
   description: 'Products Page'
 }
+
+//* ISR: Incremental Static Regeneration
+export const revalidate = 60
 
 export default async function ProductsPage() {
   const products = await services.getProducts()

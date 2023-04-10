@@ -1,4 +1,4 @@
-import { Header } from '@/app/components'
+import { Header } from '@/components'
 import styles from './page.module.scss'
 
 export const metadata = {

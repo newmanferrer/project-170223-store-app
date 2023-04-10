@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useShoppingCartContext, useNavigationMobileContext } from '@/contexts'
 import styles from './CartButton.module.scss'
-import ShoppingCartIcon from '../../../public/images/shopping.cart.icons/cart.solid.svg'
+import ShoppingCartIcon from '@/public/images/shopping.cart.icons/cart.solid.svg'
 
 export function CartButton() {
   const { toggleCart, getNumberOfProducts } = useShoppingCartContext()

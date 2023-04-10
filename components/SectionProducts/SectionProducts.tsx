@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react'
 import Link from 'next/link'
 import { Product } from 'prisma/prisma-client'
-import { ProductCardSkeleton } from '@/app/components'
+import { ProductCardSkeleton } from '@/components'
 import styles from './SectionProducts.module.scss'
 
 const ProductCard = lazy(() => import('../ProductCard/ProductCard'))

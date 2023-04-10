@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { GlobalContextsProviders } from '../contexts'
-import { ShoppingCart } from '@/app/components'
+import { GlobalContextsProviders } from '@/contexts'
+import { ShoppingCart } from '@/components'
 import { font_montserrat, font_dancing_script, font_jetBrainsMono, font_acme } from '../fonts'
 import './globals.scss'
 

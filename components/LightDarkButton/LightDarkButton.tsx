@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import sun from '../../../public/images/light.dark.button/sun.svg'
-import moon from '../../../public/images/light.dark.button/moon.svg'
+import sun from '@/public/images/light.dark.button/sun.svg'
+import moon from '@/public/images/light.dark.button/moon.svg'
 import styles from './LightDarkButton.module.scss'
 
 interface IProps {

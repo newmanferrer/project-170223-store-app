@@ -17,7 +17,7 @@
       height: 30px;
       margin-top: 9px;
 
-      background-image: url('../../../public/images/english.spanish.button/united-states-rectangle.svg');
+      background-image: url('../../public/images/english.spanish.button/united-states-rectangle.svg');
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -78,9 +78,9 @@
 }
 
 .container__link_english::before {
-  background-image: url('../../../public/images/english.spanish.button/united-states-rectangle.svg');
+  background-image: url('../../public/images/english.spanish.button/united-states-rectangle.svg');
 }
 
 .container__link_spanish::before {
-  background-image: url('../../../public/images/english.spanish.button/spain-rectangle.svg');
+  background-image: url('../../public/images/english.spanish.button/spain-rectangle.svg');
 }

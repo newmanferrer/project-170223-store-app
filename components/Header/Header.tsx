@@ -2,7 +2,7 @@
 
 import { useNavigationMobileContext } from '@/contexts'
 import { useScrollYGreaterThan } from '@/hooks'
-import { Logo, Navigation, NavigationMobile, HamburgerIcon, CloseIcon } from '@/app/components'
+import { Logo, Navigation, NavigationMobile, HamburgerIcon, CloseIcon } from '@/components'
 import { font_dancing_script } from '@/fonts'
 import styles from './Header.module.scss'
 

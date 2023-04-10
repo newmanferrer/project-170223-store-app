@@ -1,4 +1,4 @@
-import { Header, SectionBanner, SectionProducts, SectionBrands, Footer } from '@/app/components'
+import { Header, SectionBanner, SectionProducts, SectionBrands, Footer } from '@/components'
 import { services } from '@/services'
 import styles from './page.module.scss'
 

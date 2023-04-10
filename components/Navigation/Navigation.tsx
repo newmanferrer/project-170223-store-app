@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { links } from './links'
-import { CartButton, Languages, LightDarkButton } from '@/app/components'
+import { CartButton, Languages, LightDarkButton } from '@/components'
 import styles from './Navigation.module.scss'
 
 export function Navigation() {

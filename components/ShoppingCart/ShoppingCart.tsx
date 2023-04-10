@@ -1,7 +1,7 @@
 'use client'
 
 import { useShoppingCartContext } from '@/contexts'
-import { CloseIcon, CartProductCard } from '@/app/components'
+import { CloseIcon, CartProductCard } from '@/components'
 import styles from './ShoppingCart.module.scss'
 
 export const ShoppingCart = () => {
