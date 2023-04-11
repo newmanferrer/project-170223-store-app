@@ -13,9 +13,12 @@ export async function GET(request: NextRequest) {
   try {
     const { products, CustomError } = await getProductsByCategory('adidas product')
     if (CustomError) throw new Error(JSON.stringify(CustomError))
-    return NextResponse.json(products, { status: 200, statusText: 'GET OK' })
-  } catch (error) {
-    return NextResponse.json(error, { status: 500, statusText: 'GET ERROR: Internal Server Error' })
+    return NextResponse.json({ products }, { status: 200, statusText: 'GET OK' })
+  } catch (CustomError) {
+    return NextResponse.json(
+      { CustomError },
+      { status: 500, statusText: 'GET ERROR: Internal Server Error' }
+    )
   }
 }
 //* =====================================================================================
