@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import Link from 'next/link'
-import { Product } from 'prisma/prisma-client'
+import { ProductIncludeRelations } from '@/services'
 import { ProductCardSkeleton } from '@/components'
 import styles from './SectionProducts.module.scss'
 
@@ -9,7 +9,7 @@ const ProductCard = lazy(() => import('../ProductCard/ProductCard'))
 interface IProps {
   title: string
   subtitle: string
-  products: Product[]
+  products: ProductIncludeRelations[]
   minHeight100vh?: boolean
   paddingTop?: boolean
   backgroundDark?: boolean
