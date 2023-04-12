@@ -25,9 +25,9 @@ export async function GET(request: NextRequest, { params }: IProps) {
     const { product, CustomError } = await getProductById(productId)
     if (CustomError) throw new Error(JSON.stringify(CustomError))
     return NextResponse.json({ product }, { status: 200, statusText: 'GET OK' })
-  } catch (error) {
+  } catch (CustomError) {
     return NextResponse.json(
-      { error },
+      { CustomError },
       {
         status: 500,
         statusText: 'GET ERROR: Internal Server Error'
