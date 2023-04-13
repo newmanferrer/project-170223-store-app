@@ -3,3 +3,4 @@ export { useScrollYGreaterThan } from './useScrollYGreaterThan/useScrollYGreater
 export { useObserver } from './useObserver/useObserver'
 export { useVisible } from './useVisible/useVisible'
 export { useIsScrolling } from './useIsScrolling/useIsScrolling'
+export { useScrollingYDirection } from './useScrollingYDirection/useScrollingYDirection'
