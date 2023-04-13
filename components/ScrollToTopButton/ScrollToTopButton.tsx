@@ -1,10 +1,11 @@
 'use client'
 
-import { useScrollYGreaterThan } from '@/hooks'
+import { useScrollYGreaterThan, useIsScrolling } from '@/hooks'
 import styles from './ScrollToTopButton.module.scss'
 
 export function ScrollToTopButton() {
   const { isGreater } = useScrollYGreaterThan(640)
+  const { isScrolling } = useIsScrolling(3)
 
   const handlerClick = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -12,7 +13,7 @@ export function ScrollToTopButton() {
 
   return (
     <button
-      className={`${styles.button} ${isGreater ? styles.visibility : ''}`}
+      className={`${styles.button} ${isGreater && isScrolling ? styles.visibility : ''}`}
       onClick={handlerClick}
     >
       <div className={styles.spans_wrapper}>
