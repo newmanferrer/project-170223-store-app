@@ -50,7 +50,7 @@
   }
 
   &__goToPageLink_wrapper {
-    width: 320px;
+    width: 280px;
     height: 80px;
 
     display: flex;
@@ -66,8 +66,8 @@
 
     &::before {
       content: '';
-      width: 370px;
-      height: 370px;
+      width: 290px;
+      height: 290px;
 
       position: absolute;
       animation: rotate 5s linear infinite;
@@ -77,7 +77,7 @@
 
     &::after {
       content: '';
-      width: 310px;
+      width: 270px;
       height: 70px;
 
       position: absolute;
