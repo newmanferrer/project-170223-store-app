@@ -47,8 +47,6 @@ export default async function HomePage() {
         goToPageLink='products/most-wanted'
         goToPageLinkTitle='go to most wanted'
       />
-
-      <Footer />
     </div>
   )
 }

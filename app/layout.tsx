@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { GlobalContextsProviders } from '@/contexts'
-import { ShoppingCart, ScrollToTopButton } from '@/components'
+import { ShoppingCart, ScrollToTopButton, Footer } from '@/components'
 import { font_montserrat, font_dancing_script, font_jetBrainsMono, font_acme } from '../fonts'
 import './globals.scss'
 
@@ -33,6 +33,7 @@ export default function RootLayout({ children }: IProps) {
           {children}
           <ShoppingCart />
           <ScrollToTopButton />
+          <Footer />
         </GlobalContextsProviders>
       </body>
     </html>

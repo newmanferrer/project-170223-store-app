@@ -2,19 +2,132 @@
 
 .container {
   width: 100%;
-  height: 25rem;
+  padding: 4rem 1rem;
 
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
 
+  background-image: url('../../public/images/footer/bg-blue-640x426.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: $primary-dark;
 
-  &__title {
-    text-align: center;
-    font-size: 2rem;
+  &__signin_form,
+  &__tags_wrapper,
+  &__navbar_wrapper,
+  &__search_wrapper,
+  &__contacts_wrapper,
+  &__social_networks_wrapper,
+  &__copyright_wrapper {
+    width: clamp(10rem, 15rem + 1rem, 20rem);
+    padding: 2rem 0;
+
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: rgba($color: $black, $alpha: 0.4);
+  }
+
+  &__inputs_wrapper,
+  &__button_wrapper {
+    width: 100%;
+    padding: 0.25rem;
+
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.5rem;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__input,
+  &__button {
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  &__input {
+    width: clamp(8rem, 12rem + 1rem, 15rem);
+    height: 35px;
+    padding: 10px;
+
+    color: $primary;
+
+    outline: none;
+    background-color: $primary-light;
+  }
+
+  &__button {
+    width: clamp(5rem, 6rem + 1px, 7rem);
+    padding: 0.5rem 0.5rem;
+
+    color: $primary-light;
+
+    transition: all 0.5s ease-in-out;
+
+    border: 1px solid transparent;
+    background-color: $primary;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-dark-accent;
+      border: 1px solid $primary-dark-accent;
+      background-color: rgba($color: $primary, $alpha: 0.3);
+    }
+  }
+
+  &__ul {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__li {
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 1rem;
     font-weight: bold;
     color: $primary-light;
+    text-decoration: none;
+
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $primary-light;
+  }
+
+  &__title {
+    font-size: 1rem;
+    color: $primary-light;
+  }
+
+  &__title_h2 {
+    font-size: 1.2rem;
+  }
+
+  &__title_h3 {
+    font-size: 0.8rem;
   }
 }
