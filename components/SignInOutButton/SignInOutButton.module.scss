@@ -1,0 +1,27 @@
+@use '@/colors/_colors.scss' as *;
+
+.button {
+  width: 5.5rem;
+  padding: 0.25rem;
+
+  text-align: center;
+  font-size: 1.2rem;
+  color: $primary-light;
+  outline: none;
+
+  transition: all 0.5s ease-in-out;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: $primary-light-accent;
+
+  &:hover {
+    cursor: pointer;
+    color: $primary-light-accent;
+    background-color: $primary-light;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
