@@ -29,3 +29,8 @@ export { CartProductCard } from './CartProductCard/CartProductCard'
 export { AddToCartButton } from './AddToCartButton/AddToCartButton'
 
 export { ScrollToTopButton } from './ScrollToTopButton/ScrollToTopButton'
+
+//* NEXT AUTH
+export { SignInButton } from './SignInButton/SignInButton'
+export { SignOutButton } from './SignOutButton/SignOutButton'
+export { SignInOutButton } from './SignInOutButton/SignInOutButton'
