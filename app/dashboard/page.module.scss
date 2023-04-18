@@ -1,0 +1,68 @@
+@use '@/colors/_colors.scss' as *;
+
+.container {
+  width: 100vw;
+  min-height: calc(100vh - 7rem);
+  padding: 1rem clamp(1rem, 5vw + 1rem, 5rem) 1rem;
+  margin-top: 7rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include backgroundLight;
+
+  &__title {
+    margin-bottom: 0.5rem;
+    text-align: center;
+
+    color: $primary;
+    font-family: var(--font-jetBrainsMono);
+  }
+
+  &__title_h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+  }
+
+  &__title_h2 {
+    font-size: 2.5rem;
+  }
+
+  &__paragraph {
+    margin: 2rem 0;
+    padding: 1rem;
+
+    color: $primary-light;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    border: 1px solid $primary-light;
+    border-radius: 5px;
+    background-color: $danger;
+  }
+
+  &__button {
+    width: 6rem;
+    margin: 2rem 0;
+    padding: 0.5rem 1rem;
+
+    font-size: 1.2rem;
+    color: $primary-light-accent;
+    outline: none;
+
+    transition: all 0.5s ease-in-out;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: $primary-light;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-light;
+      background-color: $primary-light-accent;
+    }
+  }
+}
