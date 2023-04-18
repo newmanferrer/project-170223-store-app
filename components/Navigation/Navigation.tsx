@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { links } from './links'
-import { CartButton, Languages, LightDarkButton } from '@/components'
+import { SignInOutButton, CartButton, Languages, LightDarkButton } from '@/components'
 import styles from './Navigation.module.scss'
 
 export function Navigation() {
@@ -17,6 +17,7 @@ export function Navigation() {
       </ul>
 
       <section className={styles.nav__section_wrapper}>
+        <SignInOutButton />
         <CartButton />
         <Languages />
         <LightDarkButton id='header' />
