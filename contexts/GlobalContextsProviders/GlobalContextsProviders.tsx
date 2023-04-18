@@ -4,8 +4,11 @@
 //* ===========================================================================
 //* 1.- Imports
 //* ===========================================================================
+'use client'
+
 import { ReactNode } from 'react'
 import { ShoppingCartProvider, NavigationMobileProvider } from '@/contexts'
+import { SessionProvider } from 'next-auth/react'
 //* ===========================================================================
 
 //* ===========================================================================
@@ -25,9 +28,11 @@ interface IGlobalContextsProvidersProps {
 //* ===========================================================================
 function GlobalContextsProviders({ children }: IGlobalContextsProvidersProps) {
   return (
-    <ShoppingCartProvider>
-      <NavigationMobileProvider>{children}</NavigationMobileProvider>
-    </ShoppingCartProvider>
+    <SessionProvider>
+      <ShoppingCartProvider>
+        <NavigationMobileProvider>{children}</NavigationMobileProvider>
+      </ShoppingCartProvider>
+    </SessionProvider>
   )
 }
 //* ===========================================================================
