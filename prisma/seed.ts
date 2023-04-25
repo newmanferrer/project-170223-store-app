@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { products, categories, tags } from '../data/index.mjs'
+import { products, categories, tags } from '../data'
 
 const prisma = new PrismaClient({
   log: ['query', 'info', 'warn', 'error'],

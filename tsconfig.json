@@ -33,8 +33,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "prisma/seed.mjs",
-    "data/products/products.mjs"
+    "prisma/seed.ts",
+    "data/products/products.ts"
   ],
   "exclude": ["node_modules"]
 }
