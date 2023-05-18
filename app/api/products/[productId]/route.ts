@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getProductById } from '@/lib'
 
-interface IProps {
+interface IParams {
   params: {
     productId: string
   }
@@ -18,7 +18,7 @@ interface IProps {
 //* It is equivalent to the old "getServerSideProps()" in Nextjs 12
 //* It is equivalent to put the parameter: "{ cache: 'no-store' }" in Nextjs 13.0
 //* =====================================================================================
-export async function GET(request: NextRequest, { params }: IProps) {
+export async function GET(request: NextRequest, { params }: IParams) {
   const productId = params.productId
 
   try {
@@ -35,4 +35,5 @@ export async function GET(request: NextRequest, { params }: IProps) {
     )
   }
 }
+
 //* =====================================================================================
