@@ -30,7 +30,7 @@ export default function RootLayout({ children }: IProps) {
       <head />
       <body>
         <GlobalContextsProviders>
-          {children}
+          <main>{children}</main>
           <ShoppingCart />
           <ScrollToTopButton />
           <Footer />
