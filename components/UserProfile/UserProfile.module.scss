@@ -1,0 +1,80 @@
+@use '@/colors/_colors.scss' as *;
+
+.details {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  &[open] {
+    animation: details-show 0.7s ease-in-out;
+  }
+
+  &__summary {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    list-style: none;
+
+    transition: all 0.7s ease-in-out;
+
+    border: 1px solid $primary-light;
+    border-radius: 25%;
+    background-color: $primary-light;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $primary-light-accent;
+    }
+  }
+
+  &__nav {
+    width: 7rem;
+    min-height: 5rem;
+    padding: 1rem 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 7.01rem;
+    right: 0.01rem;
+
+    border-top: 1px solid $primary-light;
+    border-bottom-left-radius: 5px;
+    background-color: $primary;
+  }
+
+  &__ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__li {
+    list-style: none;
+  }
+}
+
+@keyframes details-show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

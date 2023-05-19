@@ -34,3 +34,9 @@ export { ScrollToTopButton } from './ScrollToTopButton/ScrollToTopButton'
 export { SignInButton } from './SignInButton/SignInButton'
 export { SignOutButton } from './SignOutButton/SignOutButton'
 export { SignInOutButton } from './SignInOutButton/SignInOutButton'
+
+export { SignInForm } from './SignInForm/SignInForm'
+export { RegisterForm } from './RegisterForm/RegisterForm'
+export { Message } from './Message/Message'
+
+export { UserProfile } from './UserProfile/UserProfile'
