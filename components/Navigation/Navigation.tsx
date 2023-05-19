@@ -1,11 +1,18 @@
 import Link from 'next/link'
 import { links } from './links'
 import { useSession } from 'next-auth/react'
-import { SignInOutButton, CartButton, Languages, LightDarkButton } from '@/components'
+import {
+  SignInOutButton,
+  CartButton,
+  Languages,
+  LightDarkButton,
+  UserProfile,
+  SignInButton
+} from '@/components'
 import styles from './Navigation.module.scss'
 
 export function Navigation() {
-  const { data: session } = useSession()
+  const { status } = useSession()
 
   return (
     <nav className={styles.nav}>
@@ -20,11 +27,13 @@ export function Navigation() {
       </ul>
 
       <section className={styles.nav__section_wrapper}>
-        {session && session.user && <span>{session.user.name}</span>}
-        <SignInOutButton />
-        <CartButton />
         <Languages />
         <LightDarkButton id='header' />
+        <CartButton />
+      </section>
+
+      <section className={styles.nav__section_wrapper}>
+        {status === 'authenticated' ? <UserProfile /> : <SignInOutButton />}
       </section>
     </nav>
   )

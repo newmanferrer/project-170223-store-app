@@ -20,5 +20,10 @@ export const links: ILink[] = [
     id: 4,
     label: 'Dashboard',
     route: '/dashboard'
+  },
+  {
+    id: 5,
+    label: 'Register',
+    route: '/register'
   }
 ]
