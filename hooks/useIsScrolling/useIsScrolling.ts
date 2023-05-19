@@ -1,19 +1,26 @@
-'use client'
-
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export function useIsScrolling(seconds: number) {
   const [isScrolling, setIsScrolling] = useState<boolean>(false)
-  let scrollTimeOut: NodeJS.Timeout
-  const milliseconds = seconds * 1000
 
-  window.addEventListener('scroll', (ev: Event) => {
-    setIsScrolling(true)
-    window.clearTimeout(scrollTimeOut)
-    scrollTimeOut = setTimeout(() => {
-      setIsScrolling(false)
-    }, milliseconds)
-  })
+  useEffect(() => {
+    let scrollTimeOut: NodeJS.Timeout
+    const milliseconds = seconds * 1000
+
+    const onScroll = () => {
+      setIsScrolling(true)
+      window.clearTimeout(scrollTimeOut)
+      scrollTimeOut = setTimeout(() => {
+        setIsScrolling(false)
+      }, milliseconds)
+    }
+
+    window.addEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [seconds])
 
   return { isScrolling }
 }
