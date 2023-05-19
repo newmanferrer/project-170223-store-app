@@ -6,10 +6,8 @@
 //* ===========================================================================
 'use client'
 
-import { ReactNode } from 'react'
-import { ShoppingCartProvider, NavigationMobileProvider } from '@/contexts'
 import { SessionProvider } from 'next-auth/react'
-import type { Session } from 'next-auth'
+import { ShoppingCartProvider, NavigationMobileProvider } from '@/contexts'
 //* ===========================================================================
 
 //* ===========================================================================
@@ -19,8 +17,7 @@ import type { Session } from 'next-auth'
 //* 2.1.- IGlobalContextsProvidersProps
 //* ---------------------------------------------------------------------------
 interface IGlobalContextsProvidersProps {
-  children: ReactNode
-  session: Session
+  children: React.ReactNode
 }
 //* ---------------------------------------------------------------------------
 //* ===========================================================================
@@ -28,9 +25,9 @@ interface IGlobalContextsProvidersProps {
 //* ===========================================================================
 //* 3.- Create the Provider
 //* ===========================================================================
-function GlobalContextsProviders({ children, session }: IGlobalContextsProvidersProps) {
+function GlobalContextsProviders({ children }: IGlobalContextsProvidersProps) {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider>
       <ShoppingCartProvider>
         <NavigationMobileProvider>{children}</NavigationMobileProvider>
       </ShoppingCartProvider>
