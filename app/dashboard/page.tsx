@@ -21,13 +21,19 @@ export default function DashboardPage() {
         <h1 className={`${styles.container__title} ${styles.container__title_h1}`}>
           Dashboard Page
         </h1>
-        <p className={styles.container__paragraph}>
-          Welcome {session.user?.name}! You are allowed to view this page
-        </p>
-        {session && session.user?.image && (
-          <Image src={session.user?.image} alt='user image' width={200} height={200} />
+
+        {session && (
+          <div className={styles.container__user_wrapper}>
+            {session.user?.image && (
+              <Image src={session.user?.image} alt='user image' width={150} height={150} />
+            )}
+
+            <div className={styles.container__paragraph_wrapper}>
+              <p className={styles.container__paragraph}>Welcome {session.user?.name}!</p>
+              <p className={styles.container__paragraph}>You are allowed to view this page</p>
+            </div>
+          </div>
         )}
-        <SignOutButton />
       </main>
     )
   }
@@ -36,10 +42,15 @@ export default function DashboardPage() {
     <main className={styles.container}>
       <Header />
       <h1 className={`${styles.container__title} ${styles.container__title_h1}`}>Dashboard Page</h1>
+
       <h2 className={`${styles.container__title} ${styles.container__title_h2}`}>
         This is a protected route
       </h2>
-      <p className={styles.container__paragraph}>You need to be signed in to view this page</p>
+
+      <div className={styles.container__paragraph_wrapper}>
+        <p className={styles.container__paragraph}>You need to be signed in to view this page</p>
+      </div>
+
       <SignInButton />
     </main>
   )

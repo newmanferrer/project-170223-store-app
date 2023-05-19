@@ -31,17 +31,38 @@
     font-size: 2.5rem;
   }
 
-  &__paragraph {
-    margin: 2rem 0;
+  &__user_wrapper {
+    margin: 3rem 0 1rem;
+    padding: 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid $primary-light;
+    border-radius: 5px;
+    background-color: $primary;
+  }
+
+  &__paragraph_wrapper {
+    margin: 1rem 0;
     padding: 1rem;
 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid $primary-light;
+    border-radius: 5px;
+    background-color: $primary;
+  }
+
+  &__paragraph {
     color: $primary-light;
     font-size: 1.2rem;
     font-weight: 700;
-
-    border: 1px solid $primary-light;
-    border-radius: 5px;
-    background-color: $danger;
   }
 
   &__button {
