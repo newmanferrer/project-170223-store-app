@@ -18,6 +18,11 @@ export const links: ILink[] = [
   },
   {
     id: 4,
+    label: 'Register',
+    route: '/register'
+  },
+  {
+    id: 5,
     label: 'Sign in',
     route: '/signin'
   }
